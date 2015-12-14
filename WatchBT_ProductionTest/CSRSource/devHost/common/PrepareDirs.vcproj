@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="PrepareDirs"
+	ProjectGUID="{E71344A4-71E1-402C-B283-931ED7203B25}"
+	SccProjectName="Perforce Project"
+	SccLocalPath="."
+	SccProvider="MSSCCI:Perforce SCM"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\release"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\preparedirs\release"
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake /f &quot;PrepareDirs.mak&quot;"
+				ReBuildCommandLine="nmake /f &quot;PrepareDirs.mak&quot; /a"
+				CleanCommandLine=""
+				Output="PrepareDirs.exe"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\debug"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\preparedirs\debug"
+			ConfigurationType="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake /f &quot;PrepareDirs.mak&quot;"
+				ReBuildCommandLine="nmake /f &quot;PrepareDirs.mak&quot; /a"
+				CleanCommandLine=""
+				Output="PrepareDirs.exe"
+				PreprocessorDefinitions=""
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath="PrepareDirs.mak"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

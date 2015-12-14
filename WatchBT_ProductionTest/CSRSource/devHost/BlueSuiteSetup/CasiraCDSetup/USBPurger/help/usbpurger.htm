@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=Windows-1252">
+  <title>USB Purger</title>
+</head>
+<body>
+<big style="font-weight: bold;">USB Purger Usage</big><br>
+<br>
+USBPurger is a Windows command line application which removes references to device drivers from the registry and .inf files, which has the effect of making an attached device unknown at the time of next entry.  This
+does not actually delete the driver - only the OS's reference to it.<br>
+<br>
+It is not supported, and is used entirely at the user's own risk.  It can have unexpected side effects.<br>
+<br>
+<span style="font-weight: bold;">Usage:</span><br>
+<br>
+    USBPurger [vid pid]<br>
+<br>
+USBPurger searches for and removes all .inf files and registry entries which contain the vid and pid supplied in hex on the commandline.  By default USBPurger looks for BlueCore HCI devices, with vid=0a12 and
+pid=0001, ie:<br>
+<br>
+    USBPurger<br>
+<br>
+and<br>
+<br>
+    USBPurger 0a12 0001<br>
+<br>
+have the same effect.<br>
+</body>
+</html>

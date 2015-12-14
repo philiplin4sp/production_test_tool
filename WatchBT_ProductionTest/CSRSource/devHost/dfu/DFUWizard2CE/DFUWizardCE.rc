@@ -1,0 +1,276 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\DFUWizardCE.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAINFRAME           ICON    DISCARDABLE     "..\\..\\common\\CSR.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_UPGRADE_DIALOG DIALOG DISCARDABLE  0, 0, 186, 105
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore DFU"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Progress1",IDC_UPGRADE_PROGRSS,"msctls_progress32",0x0,
+                    7,5,172,6
+    EDITTEXT        IDC_UPGRADE_LOG_EDIT,7,17,172,62,ES_MULTILINE
+    DEFPUSHBUTTON   "OK",IDC_OK_BUTTON,129,87,50,14,BS_CENTER | BS_VCENTER
+END
+
+IDD_PROMPT_DIALOG DIALOG DISCARDABLE  0, 0, 162, 106
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "BlueCore DFU"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_PROMPT_DOWNLOAD_EDIT,2,33,156,14,ES_AUTOHSCROLL
+    LTEXT           "&Filename",IDC_PROMPT_DOWNLOAD_STATIC,2,14,35,15,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "Browse...",IDC_PROMPT_DOWNLOAD_BUTTON,108,18,50,13
+    EDITTEXT        IDC_PROMPT_DOWNLOAD_COMMENT_EDIT,2,50,156,33,ES_CENTER | 
+                    ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,46,89,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,108,89,50,14
+    COMBOBOX        IDC_PROMPT_CONNECTION_COMBO,39,2,89,52,CBS_DROPDOWN | 
+                    CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_GROUP | 
+                    WS_TABSTOP
+    LTEXT           "&Port",IDC_STATIC,2,4,14,8
+    PUSHBUTTON      "Restore",IDC_RESTORE_BUTTON,51,18,50,13
+END
+
+IDD_FILE_DIALOG DIALOG DISCARDABLE  0, 0, 247, 42
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_UPGRADE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_PROMPT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 158
+        BOTTOMMARGIN, 103
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROMPT_DIALOG DLGINIT
+BEGIN
+    IDC_PROMPT_CONNECTION_COMBO, 0x403, 10, 0
+0x0043, 0x004f, 0x004d, 0x0031, 0x0000, 
+    IDC_PROMPT_CONNECTION_COMBO, 0x403, 10, 0
+0x0043, 0x004f, 0x004d, 0x0032, 0x0000, 
+    IDC_PROMPT_CONNECTION_COMBO, 0x403, 10, 0
+0x0043, 0x004f, 0x004d, 0x0033, 0x0000, 
+    IDC_PROMPT_CONNECTION_COMBO, 0x403, 10, 0
+0x0043, 0x004f, 0x004d, 0x0034, 0x0000, 
+    IDC_PROMPT_CONNECTION_COMBO, 0x403, 10, 0
+0x0043, 0x004f, 0x004d, 0x0035, 0x0000, 
+    IDC_PROMPT_CONNECTION_COMBO, 0x403, 10, 0
+0x0043, 0x004f, 0x004d, 0x0036, 0x0000, 
+    IDC_PROMPT_CONNECTION_COMBO, 0x403, 10, 0
+0x0043, 0x004f, 0x004d, 0x0037, 0x0000, 
+    IDC_PROMPT_CONNECTION_COMBO, 0x403, 10, 0
+0x0043, 0x004f, 0x004d, 0x0038, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OP_INACTIVE         "BlueCore DFU"
+    IDS_OP_IDLE             "Idle"
+    IDS_OP_RECONFIGURE      "Reconfigure (%i%%)"
+    IDS_OP_UPLOAD           "Uploading (%i%%)"
+    IDS_OP_DOWNLOAD         "Downloading (%i%%)"
+    IDS_OP_MANIFEST         "Manifesting (%i%%)"
+    IDS_OP_UNKNOWN          "Unknown operation"
+    IDS_ABORT_QUERY         "Aborting the upgrade may leave your BlueCore module in a non-working state.\nAre you sure you want to abort?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MSG_FAIL_CREATE     "Failed to start DFU Engine for connection to %s."
+    IDS_MSG_FAIL_START      "Failed to start operation.\r\n\r\n%s"
+    IDS_MSG_FAIL            "Device Firmware Upgrade failed.\r\n\r\n%s"
+    IDS_MSG_STATE           "The DFU Engine returned an unexpected state %u."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_REGISTRY_COMPANY    "Cambridge Silicon Radio"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_FILE_NOT_DFU        "%s\r\nNot a valid DFU file.\r\nPlease select a file with a .dfu extension."
+    IDP_FILE_NOT_VALID      "%s\r\nNot a valid DFU file.\r\nEnsure that the file is readable and has not been corrupted."
+    IDS_FILE_SELECT_NONE_OPEN "Please select a DFU file"
+    IDS_FILE_SELECT_NONE_SAVE "Please enter a name for the DFU file"
+    IDS_FILE_SELECT_NO_COMMENT "No description available for %s"
+    IDS_FILE_CAPTION_OPEN   "Select DFU File"
+    IDS_FILE_CAPTION_SAVE   "Save DFU File As"
+    IDS_FILE_OK_OPEN        "Select"
+    IDS_FILE_OK_SAVE        "Save"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DOWNLOAD_NOT_VALID  "Not a valid DFU file"
+    IDS_DOWNLOAD_NO_COMMENT "No description available"
+    IDP_DOWNLOAD_DIR_TITLE  "Select the directory containing DFU files to download."
+    IDS_DOWNLOAD_DIR_VALID  "All DFU files in directory to be downloaded"
+    IDS_DOWNLOAD_DIR_NOT_VALID "Not a valid directory"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LOG_COMMENT_CYCLE   "Starting cycle %i..."
+    IDS_LOG_COMMENT_STOPPED "STOP"
+    IDS_LOG_COMMENT_RETRY   "Retry selected by user"
+    IDS_LOG_COMMENT_IGNORE  "Ignore selected by user"
+    IDS_LOG_COMMENT_ABORT   "Abort selected by user"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LOG_ACTION_RECONFIGURE "Reconfigure"
+    IDS_LOG_ACTION_UPLOAD   "Upload"
+    IDS_LOG_ACTION_DOWNLOAD "Download"
+    IDS_LOG_ACTION_MANIFEST "Manifest"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LOG_FORMAT_COMMENT  "\r\n%s\r\n"
+    IDS_LOG_FORMAT_FILE     " '%s'"
+    IDS_LOG_FORMAT_OK       "\tOK"
+    IDS_LOG_FORMAT_FAIL     "\tFAILED"
+    IDS_LOG_FORMAT_TIME     "\t[%H:%M:%S]"
+    IDS_LOG_FORMAT_COUNT    " x %i"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\DFUWizardCE.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Precision Helper 1.0.1">
+<!-- Sitemap 1.0 -->
+</HEAD>
+<BODY>
+    <OBJECT type="text/site properties">
+      <param name="FrameName" value="right">
+      <param name="Window Styles" value="0x00800025">
+      <param name="comment" value="title:DFUWizard">
+      <param name="comment" value="base:main_index.htm">
+    </OBJECT>
+    <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="DFU Wizard">
+        </OBJECT>
+        <UL>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Introduction">
+              <param name="Local" value="main_index.htm">
+            </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Command Line Interface">
+              <param name="Local" value="cli.htm">
+            </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+              <param name="Name" value="Wizard Steps">
+            </OBJECT>
+            <UL>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Upgrade the Firmware of your Bluecore Module">
+                  <param name="Local" value="page_intro.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Connection Type">
+                  <param name="Local" value="page_connection.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="USB Device Selection">
+                  <param name="Local" value="page_usbenum.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="COM Port Selection">
+                  <param name="Local" value="page_com.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Upgrade Action">
+                  <param name="Local" value="page_action.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Upgrade File">
+                  <param name="Local" value="page_file.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Ready To Upgrade">
+                  <param name="Local" value="page_summary.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Upgrade In Progress">
+                  <param name="Local" value="page_progress.htm">
+                </OBJECT>
+                <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Results">
+                  <param name="Local" value="page_results.htm">
+                </OBJECT>
+            </UL>
+        </UL>
+    </UL>
+</BODY>
+</HTML>

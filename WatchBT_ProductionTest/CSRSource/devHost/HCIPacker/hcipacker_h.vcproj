@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="hcipacker_h"
+	ProjectGUID="{A5CCEEF4-5976-4820-9EA9-3622033AF512}"
+	RootNamespace="hcipacker_h"
+	SccProjectName="Perforce Project"
+	SccLocalPath="."
+	SccProvider="MSSCCI:Perforce SCM"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\debug"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\hcipacker_h\debug"
+			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\release"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\hcipacker_h\release"
+			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath="bluecorepdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\bluecorepdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\bluecorepdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\bluecorepdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\bluecorepdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\bluecorepdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\bluecorepdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="bluestackpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\bluestackpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\bluestackpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\bluestackpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\bluestackpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\bluestackpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\bluestackpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="display_pdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\display_pdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\display_pdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\display_pdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\display_pdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\display_pdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\display_pdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_bccmd.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_bnep.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_cmd.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_cmd_cmplt.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_dm.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_evt.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_hq.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_l2cap.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_radiotest.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_rfcomm.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_sdp.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_tcp.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_udp.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_att.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_xtradm.h"
+			>
+		</File>
+		<File
+			RelativePath="$(HOSTBUILD_RESULT)\include\hcipacker\gen_xtrahcicommand.h"
+			>
+		</File>
+		<File
+			RelativePath="hcicommandcompletepdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcicommandcompletepdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcicommandcompletepdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcicommandcompletepdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcicommandcompletepdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcicommandcompletepdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcicommandcompletepdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="hcicommandpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcicommandpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcicommandpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcicommandpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcicommandpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcicommandpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcicommandpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="hcidatapdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcidatapdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcidatapdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcidatapdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcidatapdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcidatapdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcidatapdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="hcieventpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcieventpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcieventpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcieventpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcieventpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcieventpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcieventpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="hcipacker.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcipacker.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcipacker.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcipacker.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcipacker.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcipacker.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcipacker.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="hcipdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcipdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcipdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcipdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\hcipdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\hcipdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\hcipdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="legacy.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\legacy.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\legacy.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\legacy.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\legacy.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="pdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\pdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\pdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\pdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\pdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\pdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\pdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrabccmdkaldebugpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdkaldebugpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdkaldebugpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdkaldebugpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdkaldebugpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdkaldebugpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdkaldebugpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrabccmdkalextaddrdebugpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdkalextaddrdebugpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdkalextaddrdebugpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdkalextaddrdebugpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdkalextaddrdebugpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdkalextaddrdebugpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdkalextaddrdebugpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrabccmdpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrabccmdradiotestpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdradiotestpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdradiotestpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdradiotestpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdradiotestpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdradiotestpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdradiotestpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrabccmdvmdebugpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdvmdebugpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdvmdebugpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdvmdebugpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabccmdvmdebugpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabccmdvmdebugpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabccmdvmdebugpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrabnep.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabnep.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabnep.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabnep.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrabnep.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrabnep.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrabnep.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtracommandcompletepdus.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtracommandcompletepdus.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtracommandcompletepdus.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtracommandcompletepdus.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtracommandcompletepdus.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtracommandcompletepdus.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtracommandcompletepdus.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtracommandpdus.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtracommandpdus.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtracommandpdus.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtracommandpdus.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtracommandpdus.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtracommandpdus.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtracommandpdus.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtradm.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtradm.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtradm.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtradm.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtradm.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtradm.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtradm.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtraeventpdus.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtraeventpdus.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtraeventpdus.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtraeventpdus.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtraeventpdus.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtraeventpdus.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtraeventpdus.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrahqpdu.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrahqpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrahqpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrahqpdu.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrahqpdu.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrahqpdu.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrahqpdu.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtral2cap.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtral2cap.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtral2cap.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtral2cap.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtral2cap.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtral2cap.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtral2cap.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrarfcomm.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrarfcomm.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrarfcomm.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrarfcomm.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrarfcomm.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrarfcomm.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrarfcomm.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtrasdp.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrasdp.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrasdp.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrasdp.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtrasdp.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtrasdp.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtrasdp.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtratcp.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtratcp.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtratcp.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtratcp.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtratcp.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtratcp.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtratcp.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtraudp.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtraudp.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtraudp.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtraudp.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtraudp.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtraudp.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtraudp.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="xtraatt.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtraatt.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtraatt.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtraatt.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\xtraatt.h to $(HOSTBUILD_RESULT)\include\hcipacker"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\hcipacker mkdir $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;copy .\xtraatt.h $(HOSTBUILD_RESULT)\include\hcipacker&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\hcipacker\xtraatt.h"
+				/>
+			</FileConfiguration>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

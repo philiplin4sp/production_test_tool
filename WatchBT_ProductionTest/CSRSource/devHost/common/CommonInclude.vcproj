@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="CommonInclude"
+	ProjectGUID="{D55584F8-EF30-4BDD-8593-1E67FE2FD9BF}"
+	RootNamespace="CommonInclude"
+	SccProjectName="Perforce Project"
+	SccLocalPath="."
+	SccProvider="MSSCCI:Perforce SCM"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\release"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\commoninclude\release"
+			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName="$(HOSTBUILD_RESULT)\x86win32\intermediate\commoninclude\release\CommonInclude.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\debug"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\commoninclude\debug"
+			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName="$(HOSTBUILD_RESULT)\x86win32\intermediate\commoninclude\debug\CommonInclude.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath="algorithm.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\algorithm.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\algorithm.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\algorithm.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\algorithm.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\algorithm.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\algorithm.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="bool.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\bool.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\bool.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\bool.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\bool.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\bool.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\bool.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="countedpointer.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\countedpointer.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\countedpointer.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\countedpointer.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\countedpointer.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\countedpointer.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\countedpointer.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\csr_types.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\csr_types.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\csr_types.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\csr_types.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\csr_types.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\csr_types.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\csr_types.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\dynamicversioninfo.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\dynamicversioninfo.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\dynamicversioninfo.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\dynamicversioninfo.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\dynamicversioninfo.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\dynamicversioninfo.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\dynamicversioninfo.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\globalversioninfo.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\globalversioninfo.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\globalversioninfo.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\globalversioninfo.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\globalversioninfo.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\globalversioninfo.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\globalversioninfo.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="linkage.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\linkage.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\linkage.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\linkage.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\linkage.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\linkage.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\linkage.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="nocopy.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\nocopy.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\nocopy.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\nocopy.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\nocopy.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\nocopy.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\nocopy.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="order.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\order.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\order.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\order.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\order.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\order.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\order.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="portability.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\portability.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\portability.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\portability.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\portability.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\portability.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\portability.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="selectn.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\selectn.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\selectn.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\selectn.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\selectn.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\selectn.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\selectn.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="tokeniser.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\tokeniser.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\tokeniser.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\tokeniser.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\tokeniser.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\tokeniser.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\tokeniser.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="types.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\types.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\types.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\types.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\types.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\types.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\types.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="types_t.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\types_t.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\types_t.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\types_t.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\types_t.h to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\types_t.h $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\types_t.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\versionInfoResource.rc"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\versionInfoResource.rc to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\versionInfoResource.rc $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\versionInfoResource.rc"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\versionInfoResource.rc to $(HOSTBUILD_RESULT)\include\common"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\common mkdir $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;copy .\versionInfoResource.rc $(HOSTBUILD_RESULT)\include\common&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\common\versionInfoResource.rc"
+				/>
+			</FileConfiguration>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

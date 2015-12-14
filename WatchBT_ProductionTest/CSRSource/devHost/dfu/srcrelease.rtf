@@ -1,0 +1,117 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2 Arial;}{\f1\fswiss\fprq2\fcharset0 Arial;}{\f2\fswiss\fcharset0 Arial;}{\f3\fnil\fcharset2 Symbol;}}
+\viewkind4\uc1\pard\qc\b\f0\fs24 DFU Source Code\par
+\b0 Release Notes\par
+\pard\b\par
+\b0\fs20 Please read these release notes carefully before attempting to install or use the software.\par
+\par
+\f1 If this distribution contains Windows CE support then please also read the supplementary release notes that are added to the Start menu during installation.\f0\par
+\par
+\pard\fi-426\li426\b 1.\tab INTRODUCTION\b0\par
+\par
+\pard\li426 The CSR BlueCore Device Firmware Upgrade (DFU) software source code is supplied here for the purpose of developing Bluetooth technology in industrial research and development facilities.\par
+\par
+\pard\fi-426\li426\b 2.\tab DISCLAIMER\b0\par
+\par
+\pard\li426 This source code is a beta release:\par
+\pard\li710\i Use of beta release software is at your own risk. This software is provided "as is," and CSR cautions users to determine for themselves the suitability of using the beta version of this software. CSR makes no warranty or representation whatsoever of merchantability or fitness of the product for any particular purpose or use. In no event shall CSR be liable for any consequential, incidental or special damages whatsoever arising out of the use of or inability to use this software, even if the user has advised CSR of the possibility of such damages.\par
+\pard\li426\i0\par
+\pard\fi-426\li426\b 3.\tab MODIFICATIONS TO LICENSE AGREEMENT\b0\par
+\par
+\pard\li426 The following changes to the standard CSR Software License Agreement apply to the supplied DFU source code:\par
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent284{\pntxtb\'B7}}\fi-284\li710 The source code must only be used for Bluetooth projects that use CSR products.\par
+{\pntext\f3\'B7\tab}The source code must be treated as confidential, and must not be supplied to any third party without prior written consent from an authorised agent of CSR.\par
+{\pntext\f3\'B7\tab}CSR provide a world-wide, royalty free, non-exclusive license to use or distribute executable files derived from this source code in conjunction with CSR's products.\par
+{\pntext\f3\'B7\tab}All or part of the source code may be modified without restriction.\par
+{\pntext\f3\'B7\tab}Intellectual property owned or licensed by CSR and contained in the supplied source code shall remain the property of CSR or its licensors, regardless of any modifications or additions that may have been made.\par
+\pard\li426\par
+The source code for the DFU Engine DLL is not normally supplied. If it has been supplied and used, irrespective of whether any modifications have been made, then the following additional conditions apply:\par
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent284{\pntxtb\'B7}}\fi-284\li710 The source code must only be used for the project for which it was supplied by CSR.\par
+{\pntext\f3\'B7\tab}Any executable files and documentation must clearly exhibit the CSR logo and acknowledge the use of CSR source code.\par
+{\pntext\f3\'B7\tab}Any changes or bug fixes made to the source code for the DFU Engine DLL must be supplied to CSR. The supply of such modifications to CSR shall be without warranty.\par
+{\pntext\f3\'B7\tab}CSR may, at its discretion, incorporate any supplied changes or bug fixes into its own software. The ownership of any such modified code remains with CSR.\par
+\pard\li426\par
+\pard\fi-426\li426\b 4.\tab REQUIRED SOFTWARE\b0\par
+\par
+\pard\li426 The following software is required to compile the DFU source code:\par
+\par
+\b Microsoft Windows\b0\par
+\par
+\pard\li710 This source code has been developed and tested on Microsoft Windows \f1 2000\f0  with Service Pack \f1 3\f0  installed, but it may be possible to build the software on other platforms.\par
+\par
+On Windows 2000 and Windows XP it is necessary to set the \b COPYCMD\b0  environment variable to \b /Y\b0 . This restores the Windows NT 4.0 behaviour of \b XCOPY\b0 , allowing the software to build correctly.\par
+\par
+The resulting executables have been tested on Windows 98, Windows ME, \f1 Windows NT 4, \f0 Windows 2000 and Windows XP. Note that the software does not work on earlier versions of Windows (such as Windows 95) due to the lack of support for required serial API calls.\par
+\pard\li426\par
+\b Microsoft Visual C++\b0\par
+\par
+\pard\li710 This source code has been developed and tested using Microsoft Visual C++ 6.0 Enterprise Edition with Service Pack 5 installed, but it may also be possible to build the software with other versions.\par
+\par
+Note that the 'VC++ MFC and Template Libraries' must be installed, and updated with at least Service Pack 3.\par
+\pard\li426\par
+\b Microsoft Platform SDK - Core SDK\b0\par
+\par
+\pard\li710 The code has been developed and tested using the Microsoft Platform SDK - Core SDK, November 2001 Edition (Build 5.1.3590.2), but other versions may be suitable.\par
+\par
+Only the 'Build environment' component is required; it is not necessary to install the complete SDK.\par
+\par
+After installation, the 'Register PSDK Directories with Visual Studio' shortcut should be run from the Start menu. Visual C++ should then be started and the \b Microsoft SDK\\include\b0  directory moved to appear \i after\i0  the \b VC98\b0  include directories. This is necessary to enable a modified version of the MFC 4.2 library to be built as described below.\par
+\par
+The Microsoft Platform SDK is available for free download from:\par
+\pard\li994\ul http://www.microsoft.com/msdownload/platformsdk/sdkupdate\ulnone\par
+\pard\li710\par
+\pard\li426\b AVIQuick\b0\par
+\par
+\pard\li710 The AVI animations used within the DFU Wizard application were created with AVIQuick version 1.0. This tool can also be used to extract the individual frames of the animations to allow further editing.\par
+\par
+AVIQuick is a free tool, available from:\par
+\pard\li994\ul http://www.bobos.demon.co.uk/par/AVIQuick.htm\ulnone\par
+\pard\li426\b\par
+Wise for Windows Installer\b0\par
+\par
+\pard\li710 The installer for the DFU Wizard is was constructed using Wise for Windows Installer 3.52 Professional Edition, but it may also be possible to build the installer with other versions.\par
+\pard\fi-426\li426\par
+\b 5.\tab COMPILATION\b0\par
+\par
+\pard\li426 Either two or three Visual Studio projects are included in this source code distribution, any combination of which may be installed and compiled:\par
+\par
+\b DFU Engine DLL\b0\par
+\par
+\pard\li710 The DFU Engine DLL implements the Device Firmware Upgrade procedure for BlueCore modules. It is used by the DFU Wizard application and DFU Tool Tips shell extension.\par
+\par
+The source code for this project is not normally supplied; the resulting DLL is supplied pre-built in binary form with the single header file required for its use.\par
+\pard\li426\par
+\b DFU Wizard GUI\b0\par
+\par
+\pard\li710 The BlueCore Device Firmware Upgrade Wizard is a sample user interface for the DFU Engine DLL. It can be easily customised and rebranded with a different look and feel.\par
+\pard\li426\par
+\b DFU Tool Tips DLL\b0\par
+\par
+\pard\li710 The DFU Tool Tips DLL is a Windows shell extension. It provides tool tips for DFU files within Windows Explorer windows, and adds options to the file's context menu to launch the DFU Wizard GUI.\par
+\pard\li426\par
+Shortcuts to the \b .dsw\b0  files for each of the installed projects are added to the Start menu during installation of the source code. To build a particular project simply load the relevant workspace into Visual Studio, make the appropriate project active, select the Debug or Release build, and press F7.\par
+\par
+The output files from all projects are placed in the \b result\\bin\\release\b0  or \b result\\bin\\debug\b0  directory as appropriate. \f1 A s\f0 hortcut to open \f1 a \f0 Windows Explorer window for the\f1  \b result\\bin\b0\f0  director\f1 y is\f0  also added to the Start menu when the source code is installed.\par
+\par
+Finally, if Wise for Windows Installer is installed, an installer for DFU Wizard and DFU Tool Tips can be built using the supplied \b .wsi\b0  file. The installer files are built to \b devHost\\Install\b0 . Shortcuts to both the \b .wsi\b0  file and the directory containing the installers are also added to the Start menu during installation of the source code if WfWI is detected.\par
+\par
+Note that the DFU Wizard application requires the SHFolder DLL to be installed on the target system. A freely distributable version of this DLL, obtained from the Microsoft Platform SDK, is included in the \b devHost\\Install\b0  directory as \b SHFolder.exe\b0 . This is included and installed as part of the DFU Wizard installer.\par
+\par
+\pard\fi-426\li426\b 6.\tab SUPPORT\b0\par
+\par
+\pard\li426 Additional information is available from the following CSR documents:\par
+\par
+\pard\fi-1988\li2698\tx1477\tx2726\b AN092\tab (bc01-s-032)\b0\tab BlueCore01 Device Firmware Upgrade Overview\par
+\b AN093\tab (bc01-s-033)\b0\tab BlueCore01 Device Firmware Upgrade File Format Specification\par
+\b AN095\tab (bc01-s-034\b0\tab BlueCore01 Device Firmware Upgrade Protocol Specification\par
+\b AN096\tab (bc01-s-035)\b0\tab BlueCore01 Device Firmware Upgrade Sample User Interface\par
+\b AN094\tab (bc01-s-039)\b0\tab BlueCore01 Device Firmware Upgrade Application Programmer Interface\par
+\pard\li426\par
+Please contact CSR technical support with any questions concerning this source code:\par
+\par
+\pard\fi-1420\li2130\b Email\tab techsupport@csr.com or techsupportUS@csr.com\par
+Telephone\tab +44 (0)1223 692000\par
+Facsimile\tab +44 (0)1223 692001\par
+\pard\li426\b0\par
+\pard\qr\f2\fs16 Copyright \'a9 2001, 2002 Cambridge Silicon Radio\f0\par
+}
+ 

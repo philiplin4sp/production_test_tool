@@ -1,0 +1,8 @@
+blueflashcmd, version 2.5.0.93 Release
+Copyright (C) 2002-2012, Cambridge Silicon Radio Ltd.
+
+Resetting XAP
+Burning Image
+..............
+Result: Finished OK, 189 sectors flashed, 29.64 seconds
+Success

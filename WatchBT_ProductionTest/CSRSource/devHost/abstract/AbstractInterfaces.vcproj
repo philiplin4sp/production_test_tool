@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="AbstractInterfaces"
+	ProjectGUID="{A5932208-3297-4A5C-84CF-BE25B133E9E1}"
+	SccProjectName="Perforce Project"
+	SccLocalPath="."
+	SccProvider="MSSCCI:Perforce SCM"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\debug"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\abstractinterfaces\debug"
+			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName="$(HOSTBUILD_RESULT)\x86win32\intermediate\abstractinterfaces\debug\AbstractInterfaces.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\release"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\abstractinterfaces\release"
+			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName="$(HOSTBUILD_RESULT)\x86win32\intermediate\abstractinterfaces\release\AbstractInterfaces.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath="memory_reader.h"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\memory_reader.h to $(HOSTBUILD_RESULT)\include\abstract"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\abstract mkdir $(HOSTBUILD_RESULT)\include\abstract&#x0D;&#x0A;copy .\memory_reader.h $(HOSTBUILD_RESULT)\include\abstract&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\abstract\memory_reader.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\memory_reader.h to $(HOSTBUILD_RESULT)\include\abstract"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\abstract mkdir $(HOSTBUILD_RESULT)\include\abstract&#x0D;&#x0A;copy .\memory_reader.h $(HOSTBUILD_RESULT)\include\abstract&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\abstract\memory_reader.h"
+				/>
+			</FileConfiguration>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

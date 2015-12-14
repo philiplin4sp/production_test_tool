@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "USBPurger", "BlueSuiteSetup\CasiraCDSetup\USBPurger\USBPurger.vcproj", "{1C04D5EC-CFD1-4A49-A79F-CD72E9D41397}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D55584F8-EF30-4BDD-8593-1E67FE2FD9BF} = {D55584F8-EF30-4BDD-8593-1E67FE2FD9BF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Win32 = Release|Win32
+		Debug|Win32 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C04D5EC-CFD1-4A49-A79F-CD72E9D41397}.Release|Win32.ActiveCfg = Release|Win32
+		{1C04D5EC-CFD1-4A49-A79F-CD72E9D41397}.Release|Win32.Build.0 = Release|Win32
+		{1C04D5EC-CFD1-4A49-A79F-CD72E9D41397}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1C04D5EC-CFD1-4A49-A79F-CD72E9D41397}.Debug|Win32.Build.0 = Debug|Win32
+		{D55584F8-EF30-4BDD-8593-1E67FE2FD9BF}.Release|Win32.ActiveCfg = Release|Win32
+		{D55584F8-EF30-4BDD-8593-1E67FE2FD9BF}.Release|Win32.Build.0 = Release|Win32
+		{D55584F8-EF30-4BDD-8593-1E67FE2FD9BF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D55584F8-EF30-4BDD-8593-1E67FE2FD9BF}.Debug|Win32.Build.0 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

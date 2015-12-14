@@ -1,0 +1,463 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\DFUEngine.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_USB_NAME            "%s (BD_ADDR = ??-??-??-??-??-??)"
+    IDS_USB_NAME_ADDR       "%s (BD_ADDR = %02X-%02X-%02X-%02X-%02X-%02X)"
+    IDS_USB_ALIAS_PREFIX    "CSR_"
+    IDS_USB_ALIAS_SIMPLE    "HUB%s_PORT%s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BAUD_NAME           "%d baud"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_SUCCESS      "The operation was completed successfully."
+    IDS_RESULT_ABORTED      "The operation was aborted before it could be completed."
+    IDS_RESULT_FAIL_UNKNOWN "Unexpected error: Unable to determine error. No further information about the problem is available."
+    IDS_RESULT_FAIL_UNKNOWN_DETAIL 
+                            "Unexpected error: %s. No further information about the problem is available."
+    IDS_RESULT_FAIL_UNIMPLEMENTED 
+                            "An attempt was made to use an unimplemented feature: %s. A later version of the upgrade software is required to enable use of this feature."
+    IDS_RESULT_FAIL_OS      "Operating system error: %s. No further information about the problem is available."
+    IDS_RESULT_FAIL_OS_UNKNOWN 
+                            "Operating system error: Unable to determine error. No further information about the problem is available."
+    IDS_RESULT_FAIL_EXCEPTION 
+                            "Operating system exception: %s. No further information about the problem is available."
+    IDS_RESULT_FAIL_EXCEPTION_UNKNOWN 
+                            "Operating system exception: Unable to determine exception. No further information about the problem is available."
+    IDS_RESULT_FAIL_NO_TRANSPORT 
+                            "Application error: No communications transport for connecting to the device has been configured. There may be insufficient free memory for the transport to initialise."
+    IDS_RESULT_FAIL_NO_UPLOAD 
+                            "Device error: The device does not support upload of its firmware. It is not possible to save a copy of the existing firmware."
+    IDS_RESULT_FAIL_NO_DOWNLOAD 
+                            "Device error: The device does not support download of new firmware. It is not possible to upgrade the firmware of this device."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_REPLY_SHORT 
+                            "DFU request error: The response received for a control request was shorter than expected. There may have been a communications problem, or a later version of the upgrade software could be required."
+    IDS_RESULT_FAIL_REPLY_LONG 
+                            "DFU request error: The response received for a control request was longer than expected. There may have been a communications problem, or a later version of the upgrade software could be required."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_FILE_CREATE 
+                            "File error: %s could not be created. There may already be a read-only file with the same name, or the disk could be full."
+    IDS_RESULT_FAIL_FILE_OPEN 
+                            "File error: %s could not be opened for reading. The file may be in used by another program, it may not exist, or you may not have permission to read the file."
+    IDS_RESULT_FAIL_FILE_SHORT 
+                            "File error: %s is too short to be a valid firmware upgrade file. The file may have been truncated."
+    IDS_RESULT_FAIL_FILE_SUFFIX 
+                            "File error: %s is not a valid firmware upgrade file. The file may have been corrupted, or a later version of the upgrade software may be required."
+    IDS_RESULT_FAIL_FILE_READ 
+                            "File error: %s could not be read. Another program could be using the file, or you may not have permission to read the file."
+    IDS_RESULT_FAIL_FILE_CRC 
+                            "File error: %s is not a valid firmware upgrade file. The file may have been corrupted."
+    IDS_RESULT_FAIL_FILE_VENDOR 
+                            "File error: %s is intended for use with a different vendor's product. The file is not suitable for use with this device."
+    IDS_RESULT_FAIL_FILE_PRODUCT 
+                            "File error: %s is intended for use with a different product. The file is not suitable for use with this device."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_DFU_TARGET 
+                            "DFU device error: The firmware file is not intended for this device. This file cannot be used."
+    IDS_RESULT_FAIL_DFU_FILE 
+                            "DFU device error: The firmware file failed verification tests. This file may be intended for a different device, or it could have become corrupted."
+    IDS_RESULT_FAIL_DFU_WRITE 
+                            "DFU device error: The device does not support upgrade of its firmware. It is not possible to download new firmware to this device."
+    IDS_RESULT_FAIL_DFU_ERASE 
+                            "DFU device error: The memory could not be erased prior to repogramming. The device may not support firmware upgrade, or it could be suffering from a hardware problem."
+    IDS_RESULT_FAIL_DFU_CHECK_ERASED 
+                            "DFU device error: Attempts to erase the memory prior to reprogramming failed to verify. The device may not support firmware upgrade, or it could be suffering from a hardware problem."
+    IDS_RESULT_FAIL_DFU_PROG 
+                            "DFU device error: The memory could not be reprogrammed. The device may not support firmware upgrade, or it could be suffering from a hardware problem."
+    IDS_RESULT_FAIL_DFU_VERIFY 
+                            "DFU device error: Attempts to reprogram the memory failed to verify. The device may not support firmware upgrade, or it could be suffering from a hardware problem."
+    IDS_RESULT_FAIL_DFU_ADDRESS 
+                            "DFU device error: The firmware file contains addresses that are outside the range accepted by the device. The file may be corrupt, or it could be intended for a different device."
+    IDS_RESULT_FAIL_DFU_NOT_DONE 
+                            "DFU device error: The firmware file is incomplete. There may have been a communications problem, or a previous upgrade attempt could have been aborted. The device has only been partially reprogrammed, so cannot return to normal operation."
+    IDS_RESULT_FAIL_DFU_FIRMWARE 
+                            "DFU device error: The device's firmware is corrupt. New firmware needs to be downloaded before the device can return to normal operation."
+    IDS_RESULT_FAIL_DFU_VENDOR_NUM 
+                            "DFU device error: An unexpected vendor-specific failure occurred (code %s). No further information about the problem is available."
+    IDS_RESULT_FAIL_DFU_VENDOR_STR 
+                            "DFU device error: %s. No further information about the problem is available."
+    IDS_RESULT_FAIL_DFU_USBR 
+                            "DFU device error: Unexpected USB reset signalling was detected. There may have been a hardware or communications problem."
+    IDS_RESULT_FAIL_DFU_POR "DFU device error: An unexpected power-on reset was detected. The device may have become disconnected."
+    IDS_RESULT_FAIL_DFU_UNKNOWN 
+                            "DFU device error: An unexpected device firmware upgrade failure occurred. No further information about the problem is available."
+    IDS_RESULT_FAIL_DFU_STALLEDPKT 
+                            "DFU device error: An unexpected request was received by the device. There may have been a communications problem, or a later version of the upgrade software may be required."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_USB_OPEN 
+                            "USB error: %s could not be accessed. The device may be in use by another application."
+    IDS_RESULT_FAIL_USB_ID  "USB error: %s could not be accessed, and attempts to identify an alternative device name were unsuccessful. The device may be in use by another application."
+    IDS_RESULT_FAIL_USB_DESC_SHORT 
+                            "USB error: A returned descriptor was too short. A later version of the upgrade software may be required."
+    IDS_RESULT_FAIL_USB_DESC_LONG 
+                            "USB error: A returned descriptor was too long. A later version of the upgrade software may be required."
+    IDS_RESULT_FAIL_USB_DESC_BAD 
+                            "USB error: A returned descriptor was not in the expected format. A later version of the upgrade software may be required."
+    IDS_RESULT_FAIL_USB_NO_DFU 
+                            "USB error: No DFU interface descriptor. The device may may not support firmware upgrade."
+    IDS_RESULT_FAIL_USB_NONE 
+                            "USB error: No communications link has been established with the device. There may be insufficient memory to start the transport, or another program could be using the device."
+    IDS_RESULT_FAIL_USB_PS_READ 
+                            "USB error: Unable to read value of persistent store key. A later version of the USB device driver may be required, or the device may not support firmware upgrade."
+    IDS_RESULT_FAIL_USB_BUFFER 
+                            "USB error: An unsuitable buffer was supplied for a USB request. There is probably a bug in the upgrade software."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_HCI_UNKNOWN_CMD 
+                            "HCI error: Unknown HCI command. The requested operation was not recognised by the device."
+    IDS_RESULT_FAIL_HCI_NO_CONNECTION 
+                            "HCI error: No connection. The requested operation requires an existing connection, but no connection corresponding to the specified connection handle or address exists."
+    IDS_RESULT_FAIL_HCI_HARDWARE_FAIL 
+                            "HCI error: Hardware failure. The requested operation cannot be completed because the device has a hardware problem."
+    IDS_RESULT_FAIL_HCI_PAGE_TIMEOUT 
+                            "HCI error: Page timeout. An attempt was made to connect to another device, but that device did not respond quickly enough."
+    IDS_RESULT_FAIL_HCI_AUTH_FAIL 
+                            "HCI error: Authentication failed. The PIN code or link key was incorrect."
+    IDS_RESULT_FAIL_HCI_ERR_KEY_MISSING 
+                            "HCI error: Key missing. A PIN code was required but not supplied."
+    IDS_RESULT_FAIL_HCI_MEMORY_FULL 
+                            "HCI error: Memory full. The requested operation requires more memory than the device currently has available."
+    IDS_RESULT_FAIL_HCI_CONNECT_TIMEOUT 
+                            "HCI error: Connection timeout. A link to another device has been lost. The device may have gone out of radio range, or it may have been switched off."
+    IDS_RESULT_FAIL_HCI_MAX_CONNECT 
+                            "HCI error: Max number of connections. The device cannot support any more connections."
+    IDS_RESULT_FAIL_HCI_MAX_SCO 
+                            "HCI error: Max number of SCO connections to a device. The device is unable to support any more synchronous connection-oriented connections."
+    IDS_RESULT_FAIL_HCI_ACL_EXISTS 
+                            "HCI error: ACL connection already exists. An asynchronous connection-less link has already been established to the device."
+    IDS_RESULT_FAIL_HCI_CMD_DISALLOWED 
+                            "HCI error: Command disallowed. The requested operation cannot be processed at the current time."
+    IDS_RESULT_FAIL_HCI_HOST_REJ_RESOURCE 
+                            "HCI error: Host rejected due to limited resources. The connection request was rejected because the device has insufficient resources."
+    IDS_RESULT_FAIL_HCI_HOST_REJ_SECURITY 
+                            "HCI error: Host rejected due to security reasons. The connection request was rejected because security checks failed."
+    IDS_RESULT_FAIL_HCI_HOST_REJ_PERSONAL 
+                            "HCI error: Host rejected due to remote device is only a personal device. The connection request was rejected because the device is not intended for public use."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_HCI_HOST_TIMEOUT 
+                            "HCI error: Host timeout. The host did not accept a connection quickly enough."
+    IDS_RESULT_FAIL_HCI_UNSUPPORTED 
+                            "HCI error: Unsupported feature or parameter value. The device does not support the requested operation due to hardware limitations."
+    IDS_RESULT_FAIL_HCI_INVALID_PARAMS 
+                            "HCI error: Invalid HCI command parameters. The requested operation does not conform to the requirements of the Bluetooth specification."
+    IDS_RESULT_FAIL_HCI_TERM_USER 
+                            "HCI error: Other end terminated connection: User ended connection. The connected device ended the link at the request of its user."
+    IDS_RESULT_FAIL_HCI_TERM_RESOURCE 
+                            "HCI error: Other end terminated connection: Low resources. The connected device has ended the link due to insufficient resources."
+    IDS_RESULT_FAIL_HCI_TERM_OFF 
+                            "HCI error: Other end terminated connection: About to power off. The connected device has ended the link because it is about to switch off."
+    IDS_RESULT_FAIL_HCI_TERM_LOCAL 
+                            "HCI error: Connection terminated by local host. The link to another device has been ended at the request of the local host."
+    IDS_RESULT_FAIL_HCI_REPEATED 
+                            "HCI error: Repeated attempts. Insufficient time has elapsed since the last unsuccessful attempt to connect. Try again later."
+    IDS_RESULT_FAIL_HCI_NO_PAIRING 
+                            "HCI error: Pairing not allowed. The device does not accept pairing at the current time."
+    IDS_RESULT_FAIL_HCI_LMP_UNKNOWN 
+                            "HCI error: Unknown LMP PDU. The link manager protocol does not recognise the packet received."
+    IDS_RESULT_FAIL_HCI_UNSUPPORTED_REM 
+                            "HCI error: Unsupported remote feature. The device does not support the requested operation."
+    IDS_RESULT_FAIL_HCI_SCO_OFFSET 
+                            "HCI error: SCO offset rejected. The requested synchronous connection-oriented link offset was rejected."
+    IDS_RESULT_FAIL_HCI_SCO_INTERVAL 
+                            "HCI error: SCO interval rejected. The requested synchronous connection-oriented link interval was rejected."
+    IDS_RESULT_FAIL_HCI_SCO_AIR_MODE 
+                            "HCI error: SCO air mode rejected. The requested synchronous connection-oriented link air mode was rejected."
+    IDS_RESULT_FAIL_HCI_LMP_INVALID 
+                            "HCI error: Invalid LMP parameters. The link manager protocol request does not conform to the Bluetooth specification."
+    IDS_RESULT_FAIL_HCI_UNSPECIFIED 
+                            "HCI error: Unspecified error. A problem was encountered that could not be represented by any of the standard status codes."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_HCI_LMP_UNSUPPORTED 
+                            "HCI error: Unsupported LMP parameter value. The link manager protocol does not support the requested operation."
+    IDS_RESULT_FAIL_HCI_ROLE_CHANGE 
+                            "HCI error: Role change not allowed. The device does not support master-slave role change at the current time."
+    IDS_RESULT_FAIL_HCI_LMP_TIMEOUT 
+                            "HCI error: LMP response timeout. The remote device did not reply to the link manager protocol quickly enough."
+    IDS_RESULT_FAIL_HCI_LMP_ERROR 
+                            "HCI error: LMP error transaction collision."
+    IDS_RESULT_FAIL_HCI_LMP_NOT_ALLOWED 
+                            "HCI error: LMP PDU not allowed. The remote device does not support the requested link manager protocol operation."
+    IDS_RESULT_FAIL_HCI_UNKNOWN 
+                            "HCI error: An unexpected host control interface failure occurred. No further information about the problem is available."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_MODE_NO_DFU 
+                            "DFU mode error: Firmware upgrade mode could not be started. The device may have become disconnected or it may not support firmware upgrade."
+    IDS_RESULT_FAIL_MODE_NOT_IDLE 
+                            "DFU mode error: Firmware upgrade mode could not be controlled. The device may still be processing a previous request."
+    IDS_RESULT_FAIL_MODE_NOT_DNLOAD_BUSY 
+                            "DFU mode error: The device was not busy after part of the firmware file had been sent. The device may still be processing a previous request, or there may have been a communications problem."
+    IDS_RESULT_FAIL_MODE_NOT_DNLOAD_IDLE 
+                            "DFU mode error: The device was not idle after part of the firmware file had been programmed. The device may still be processing a previous request, or there may have been a communications problem."
+    IDS_RESULT_FAIL_MODE_NOT_MANIFEST 
+                            "DFU mode error: The device was not in manifest mode after the firmware file had been completely sent. The device may still be processing a previous request, or there may have been a communications problem."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_COM_OPEN 
+                            "Communications error: %s could not be accessed. The device may be in use by another program, or it may not exist."
+    IDS_RESULT_FAIL_COM_START 
+                            "Communications error: The transport protocol for connecting to the device could not be started. There may be insufficient memory to start the transport."
+    IDS_RESULT_FAIL_COM_CONNECT 
+                            "Communications error: A connection to the device could not be established. The device may not be connected, the communications settings could be incorrect, or the device may not support firmware upgrade."
+    IDS_RESULT_FAIL_COM_NONE 
+                            "Communications error: No communications link has been established with the device. There may be insufficient memory to start the transport, or another program could be using the device."
+    IDS_RESULT_FAIL_COM_FAIL 
+                            "Communications error: The communications link to the device has failed. The device may have become disconnected, or it may not support firmware upgrade."
+    IDS_RESULT_FAIL_COM_TIMEOUT 
+                            "Communications error: Attempts to communicate with the device were unsuccessful. The device may have become disconnected."
+    IDS_RESULT_FAIL_COM_TIMEOUT_TX 
+                            "Communications error: Attempts to send data to the device were unsuccessful. The device may have become disconnected, or it may not support firmware upgrade."
+    IDS_RESULT_FAIL_COM_TIMEOUT_RX 
+                            "Communications error: A response from the device was expected but none was received. The device may have become disconnected, or it may not support firmware upgrade."
+    IDS_RESULT_FAIL_COM_SHORT 
+                            "Communications error: The response received from the device was shorter than expected. There could have been a communications problem."
+    IDS_RESULT_FAIL_COM_LONG 
+                            "Communications error: The response received from the device was longer than expected. There could have been a communications problem."
+    IDS_RESULT_FAIL_COM_BUFFER 
+                            "Communications error: An unsuitable buffer was supplied for a communications request. There is probably a bug in the upgrade software."
+    IDS_RESULT_FAIL_COM_MISMATCHED 
+                            "Communications error: The reply received from the device was not the one expected. There may have been a communications error."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_BCCMD_NO_SUCH_VARID 
+                            "BCCMD error: Variable identifier not recognised. An attempt was made to read or write a value that is not supported by the device."
+    IDS_RESULT_FAIL_BCCMD_TOO_BIG 
+                            "BCCMD error: Data exceeded message or memory capacity. An attempt was made to read or write a value that is too large to be handled."
+    IDS_RESULT_FAIL_BCCMD_NO_VALUE 
+                            "BCCMD error: Variable has no value. An attempt was made to read a value that does not exist."
+    IDS_RESULT_FAIL_BCCMD_BAD_REQ 
+                            "BCCMD error: GETREQ or SETREQ held an error. An invalid request was made."
+    IDS_RESULT_FAIL_BCCMD_NO_ACCESS 
+                            "BCCMD error: Value of variable inaccessible. An attempt was made to read or write a value that is not available."
+    IDS_RESULT_FAIL_BCCMD_READ_ONLY 
+                            "BCCMD error: Value of variable unwritable. An attempt was made to write a read-only value."
+    IDS_RESULT_FAIL_BCCMD_WRITE_ONLY 
+                            "BCCMD error: Value of variable unreadable. An attempt was made to read a write-only value."
+    IDS_RESULT_FAIL_BCCMD_ERROR 
+                            "BCCMD error: Other error. A problem was encountered that could not be represented by any of the standard status codes."
+    IDS_RESULT_FAIL_BCCMD_PERMISSION_DENIED 
+                            "BCCMD error: Request not allowed. An attempt was made to perform an unsupported operation."
+    IDS_RESULT_FAIL_BCCMD_UNKNOWN 
+                            "BCCMD error: An unexpected BlueCore command interpreter failure occurred. No further information about the problem is available."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OPERATION_READY     "Device ready."
+    IDS_OPERATION_UNKNOWN   "Unexpected operation - No description available."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OPERATION_RECONFIGURE_CONNECT 
+                            "Attempting to establish initial connection."
+    IDS_OPERATION_RECONFIGURE_START_RUNTIME 
+                            "Device is already in DFU mode - Attempting to start run-time mode."
+    IDS_OPERATION_RECONFIGURE_START_DFU "Attempting to start DFU mode."
+    IDS_OPERATION_RECONFIGURE_CHECKING 
+                            "DFU mode started - Checking device status and suitability."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OPERATION_UPLOAD_PREPARE "Preparing for upload."
+    IDS_OPERATION_UPLOAD_PROGRESS "Uploading file - %s bytes received."
+    IDS_OPERATION_UPLOAD_VERIFY "Verifying upload."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OPERATION_DOWNLOAD_PREPARE "Preparing for download."
+    IDS_OPERATION_DOWNLOAD_PROGRESS "Downloading file - %s of %s bytes sent."
+    IDS_OPERATION_DOWNLOAD_VERIFY "Verifying download."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OPERATION_MANIFEST_START_RUNTIME 
+                            "Attempting to return to run-time mode."
+    IDS_OPERATION_MANIFEST_RETRY_RUNTIME 
+                            "Failed to start run-time mode - Trying again."
+    IDS_OPERATION_MANIFEST_FAIL 
+                            "Failed to start run-time mode - Determining cause."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OPERATION_RECOVER_CLEAN_UP "Attempting to clean up."
+    IDS_OPERATION_RECOVER_FAIL 
+                            "Problems encountered during clean-up - Attempting to reconnect."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SUB_OPERATION_UNKNOWN 
+                            "Unexpected sub-operation - No description available."
+    IDS_SUB_OPERATION_TRANSPORT_BCSP_PASSIVE_LE 
+                            "Trying BCSP with passive link establishment at %i baud."
+    IDS_SUB_OPERATION_TRANSPORT_BCSP_ACTIVE_LE 
+                            "Trying BCSP with active link establishment at %i baud."
+    IDS_SUB_OPERATION_TRANSPORT_BCSP_NO_LE 
+                            "Trying BCSP with no link establishment at %i baud."
+    IDS_SUB_OPERATION_TRANSPORT_H4 "Trying H4 at %i baud."
+    IDS_SUB_OPERATION_TRANSPORT_USB_WAIT "Waiting for device to enumerate."
+    IDS_SUB_OPERATION_TRANSPORT_USB_OPEN "Trying to open %s."
+    IDS_SUB_OPERATION_TRANSPORT_USB_CHECK "Checking for new devices."
+    IDS_SUB_OPERATION_TRANSPORT_ESTABLISHED 
+                            "Communications connection established."
+    IDS_SUB_OPERATION_DOWNLOAD_PROCESSING "Processing data - %i seconds."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BYTES_SMALL         "%i"
+    IDS_BYTES_LARGE         "%i,%03i"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULT_FAIL_BTW_ERROR 
+                            "Widcomm USB error: Unable to determine error. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_NOT_SUPPORTED 
+                            "Widcomm USB error: The requested operation is not supported. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_BUSY 
+                            "Widcomm USB error: The device driver is busy. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_FILE 
+                            "Widcomm USB error: The DFU file failed verification checks. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_DOWNLOAD 
+                            "Widcomm USB error: The download operation failed. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_SYSTEM 
+                            "Widcomm USB error: An operating system error has occurred. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_VENDOR 
+                            "Widcomm USB error: An unknown vendor specific error has occurred. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_START_DFU 
+                            "Widcomm USB error: Unable to start DFU mode. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_STATUS_SHORT 
+                            "Widcomm USB error: Device driver status was too short. The USB device driver may have gone wrong."
+    IDS_RESULT_FAIL_BTW_STATUS_LONG 
+                            "Widcomm USB error: Device driver status was too long. The USB device driver may have gone wrong."
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\DFUEngine.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

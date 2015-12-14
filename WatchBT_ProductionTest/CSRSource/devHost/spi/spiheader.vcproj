@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="spiheader"
+	ProjectGUID="{020E17DF-9285-4903-A63F-EAA9E2C415A6}"
+	RootNamespace="spiheader"
+	SccProjectName="spiheader"
+	SccLocalPath="."
+	SccProvider="MSSCCI:Perforce SCM"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\release"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\spiheader\release"
+			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName="$(HOSTBUILD_RESULT)\x86win32\intermediate\spiheader\release\spiheader.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(HOSTBUILD_RESULT)\x86win32\bin\debug"
+			IntermediateDirectory="$(HOSTBUILD_RESULT)\x86win32\intermediate\spiheader\debug"
+			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName="$(HOSTBUILD_RESULT)\x86win32\intermediate\spiheader\debug\spiheader.tlb"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath=".\spi_common.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\spi_common.h to $(HOSTBUILD_RESULT)\include\spi"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\spi mkdir $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;copy .\spi_common.h $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\spi\spi_common.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\spi_common.h to $(HOSTBUILD_RESULT)\include\spi"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\spi mkdir $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;copy .\spi_common.h $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\spi\spi_common.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="spilpt\spifns.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\spilpt\spifns.h to $(HOSTBUILD_RESULT)\include\spi"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\spi mkdir $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;copy .\spilpt\spifns.h $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\spi\spifns.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\spilpt\spifns.h to $(HOSTBUILD_RESULT)\include\spi"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\spi mkdir $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;copy .\spilpt\spifns.h $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\spi\spifns.h"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\stream_database.h"
+			>
+			<FileConfiguration
+				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\stream_database.h to $(HOSTBUILD_RESULT)\include\spi"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\spi mkdir $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;copy .\stream_database.h $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\spi\stream_database.h"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying .\stream_database.h to $(HOSTBUILD_RESULT)\include\spi"
+					CommandLine="if not exist $(HOSTBUILD_RESULT)\include\spi mkdir $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;copy .\stream_database.h $(HOSTBUILD_RESULT)\include\spi&#x0D;&#x0A;"
+					Outputs="$(HOSTBUILD_RESULT)\include\spi\stream_database.h"
+				/>
+			</FileConfiguration>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

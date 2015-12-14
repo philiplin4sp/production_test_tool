@@ -1,0 +1,629 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 82
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PSTool"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
+    LTEXT           "PSTool (Windows Version)",IDC_ABOUT_TITLE,40,14,119,8,SS_NOPREFIX
+    LTEXT           "Copyright © 2000-2006 Cambridge Silicon Radio.  All Rights Reserved.",IDC_ABOUT_COPYRIGHT,39,59,189,16
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "",IDC_ABOUT_BUILD,39,30,189,18
+END
+
+IDD_PSTOOL_DIALOG DIALOGEX 0, 0, 543, 313
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Persistent Store"
+MENU IDR_MAIN_MENU
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_GRID_PS,"{6262D3A0-531B-11CF-91F6-C2863C385E30}",WS_TABSTOP,219,23,317,180
+    LISTBOX         IDC_LIST_KEYS,7,19,205,287,LBS_SORT | LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ED_FILTER,30,3,182,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set",IDC_SET,257,269,51,14
+    PUSHBUTTON      "Read",IDC_READ,319,269,50,14
+    PUSHBUTTON      "Describe",IDC_DESCRIBE,379,269,50,14
+    PUSHBUTTON      "Reset && Close",IDC_RESETCLOSE,441,268,56,14
+    PUSHBUTTON      "Delete",IDC_BUT_DEL_KEY,257,292,51,14
+    PUSHBUTTON      "Reconnect",IDC_BUT_RECONNECCT,319,292,50,14
+    PUSHBUTTON      "Reset BC",IDC_BUT_RESET,379,292,50,14
+    PUSHBUTTON      "Close",IDC_CLOSE,441,292,56,14
+    PUSHBUTTON      "Delete",IDC_BUT_PS_DELETE,295,212,44,14
+    PUSHBUTTON      "Edit",IDC_BUT_PS_EDIT,351,212,45,14
+    PUSHBUTTON      "Insert",IDC_BUT_PS_INSERT,405,212,49,14
+    LTEXT           "",IDC_CAPTION_PRESENT,237,233,299,8
+    EDITTEXT        IDC_KEY_LABEL,257,248,183,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP
+    LTEXT           "",IDC_EDIT_FORMAT,237,7,112,8
+    COMBOBOX        IDC_COMBO_ENUM,237,23,228,168,CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Spin1",IDC_SPIN_VAL,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,288,23,11,14
+    EDITTEXT        IDC_ED_STR,237,23,226,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_VAL,237,23,46,14,ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "LAP",IDC_STATIC_LAP,288,23,18,8
+    LTEXT           "UAP",IDC_STATIC_UAP,265,23,23,8
+    LTEXT           "NAP",IDC_STATIC_NAP,237,23,16,8
+    EDITTEXT        IDC_ED_NAP,237,40,28,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_UAP,265,40,23,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_LAP,288,40,44,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "ENTRY NOT PRESENT - Click to &add",IDC_BUT_NOTPRESENT,237,23,180,14
+    LTEXT           "Filter:",IDC_STATIC,9,4,17,10
+END
+
+IDD_PS_INSERT DIALOG  0, 0, 246, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Power table values"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,189,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,189,24,50,14
+    LTEXT           "Internal PA",IDC_STATIC,7,21,36,8
+    LTEXT           "External PA",IDC_STATIC,69,22,38,8
+    LTEXT           "dBm",IDC_STATIC,133,23,15,8
+    EDITTEXT        IDC_ED_PS_INTERNAL_PA,7,38,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_PS_EXTERNAL_PA,67,39,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_PS_DBM,133,38,40,14,ES_AUTOHSCROLL
+END
+
+IDD_PSDESCRDLG_DIALOG DIALOGEX 0, 0, 320, 300
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,279,59,14,BS_CENTER
+    EDITTEXT        IDC_ED_DESCR,7,7,306,175,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_OEMCONVERT | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "pres key relationship",IDC_STATIC_PRESREL,7,186,306,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_ED_PRESKEYS,7,200,306,71,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+IDD_ACCESSLEVELDLG_DIALOG DIALOG  0, 0, 198, 84
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,141,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,141,24,50,14
+    COMBOBOX        IDC_CB_ACCESS,7,21,116,83,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "New security Level",IDC_STATIC,7,7,61,8
+    EDITTEXT        IDC_ED_ACC_KEY,7,53,110,14,ES_AUTOHSCROLL
+    LTEXT           "Acccess Key",IDC_STATIC,7,41,42,8
+END
+
+IDD_PSRAWDLG_DIALOG DIALOG  0, 0, 331, 105
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Raw PS key editor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_ED_VAL,52,44,272,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Close",IDC_CLOSE,274,83,50,14
+    LTEXT           "&Key",IDC_STATIC,7,11,13,8
+    EDITTEXT        IDC_ED_KEY,84,7,61,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_KEY,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,159,7,11,14
+    LTEXT           "&Value",IDC_STATIC,7,50,19,8
+    CONTROL         "&Dec",IDC_RAD_DEC_KEY,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,52,7,29,10
+    CONTROL         "&Hex",IDC_RAD_HEX_KEY,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,52,15,29,10
+    PUSHBUTTON      "&Read",IDC_READ,52,83,50,14
+    DEFPUSHBUTTON   "&Set",IDC_SET,102,83,50,14
+    PUSHBUTTON      "&Delete",IDC_DELETE,153,83,50,14
+    LTEXT           "Key is not present.",IDC_CAPTION_PRESENT,146,63,96,8
+    CONTROL         "&Dec",IDC_RAD_DEC_VAL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,26,41,29,10
+    CONTROL         "&Hex",IDC_RAD_HEX_VAL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_TABSTOP,26,49,29,10
+    CONTROL         "&Str",IDC_RAD_STR_VAL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_TABSTOP,26,57,25,10
+END
+
+IDD_IGNOREALL_DIALOG DIALOG  0, 0, 254, 66
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Caption goes here"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Abort",IDABORT,29,45,50,14
+    PUSHBUTTON      "&Retry",IDRETRY,79,45,50,14
+    PUSHBUTTON      "&Ignore",IDIGNORE,128,45,50,14
+    PUSHBUTTON      "Ignore A&ll",IDIGNOREALL,175,45,50,14
+    LTEXT           "Message text goes here.",IDC_MESSAGE_TEXT,12,7,238,30
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_PSTOOL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 536
+        VERTGUIDE, 226
+        VERTGUIDE, 237
+        VERTGUIDE, 265
+        VERTGUIDE, 277
+        VERTGUIDE, 288
+        VERTGUIDE, 344
+        VERTGUIDE, 348
+        VERTGUIDE, 417
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 306
+        HORZGUIDE, 23
+        HORZGUIDE, 40
+        HORZGUIDE, 57
+        HORZGUIDE, 212
+        HORZGUIDE, 269
+    END
+
+    IDD_PS_INSERT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_PSDESCRDLG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 293
+    END
+
+    IDD_ACCESSLEVELDLG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 77
+    END
+
+    IDD_PSRAWDLG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 324
+        VERTGUIDE, 26
+        VERTGUIDE, 52
+        VERTGUIDE, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_IGNOREALL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 12
+        RIGHTMARGIN, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PSTOOL_DIALOG DLGINIT
+BEGIN
+    IDC_GRID_PS, 0x37a, 329, 0
+0x0024, 0x0000, 0x0037, 0x0032, 0x0045, 0x0036, 0x0037, 0x0031, 0x0032, 
+0x0030, 0x002d, 0x0035, 0x0039, 0x0035, 0x0039, 0x002d, 0x0031, 0x0031, 
+0x0063, 0x0066, 0x002d, 0x0039, 0x0031, 0x0046, 0x0036, 0x002d, 0x0043, 
+0x0032, 0x0038, 0x0036, 0x0033, 0x0043, 0x0033, 0x0038, 0x0035, 0x0045, 
+0x0033, 0x0030, 0x0029, 0x0000, 0x0001, 0x0000, 0x0021, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x0001, 0x8001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0002, 0x8001, 0x0001, 0x0000, 0x2100, 0x3443, 0x0812, 0x0000, 0x3200, 
+0x0031, 0x4800, 0x001e, 0x4200, 0x6f6f, 0x0050, 0x0600, 0x8000, 0x0000, 
+0x0200, 0x0000, 0x0300, 0x0000, 0x0100, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0500, 0x0000, 0x0880, 0x0000, 0x0f80, 0x0000, 0x1280, 0x0000, 
+0x0d80, 0x0000, 0x0e80, 0x0000, 0x8080, 0x8080, 0xc000, 0xc0c0, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0100, 0x0000, 0x0100, 0x0000, 0x0000, 0x0000, 
+0x0100, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0100, 0x0000, 
+0x0100, 0x0200, 0x0300, 0x0100, 0x0000, 0x0100, 0x0000, 0x0100, 0x0100, 
+0x0000, 0x0100, 0x0400, 0x0000, 0x0000, 0x0000, 0x0300, 0xe352, 0x910b, 
+0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x0151, 0x0000, 0x9000, 0x4401, 
+0x0142, 0x0d00, 0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x0466, 
+0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 
+0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_ACCESSLEVELDLG_DIALOG DLGINIT
+BEGIN
+    IDC_CB_ACCESS, 0x403, 4, 0
+0x6c41, 0x006c, 
+    IDC_CB_ACCESS, 0x403, 10, 0
+0x6544, 0x6576, 0x6f6c, 0x6570, 0x0072, 
+    IDC_CB_ACCESS, 0x403, 5, 0
+0x7355, 0x7265, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About PSTool..."
+    IDS_ACCESS_LEVEL        "Access &Level"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CHOOSETRANS DIALOGEX 0, 0, 226, 101
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Choose Transport"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "&SPI BCCMD",IDC_RAD_SPI_BCCMD,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,7,17,55,10
+    CONTROL         "&BCSP",IDC_RAD_BCSP,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,32,35,10
+    CONTROL         "H&4",IDC_RAD_H4,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,47,25,10
+    CONTROL         "H&5",IDC_RAD_H5,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,62,25,10
+    CONTROL         "&USB",IDC_RAD_USB,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,77,31,10
+    LTEXT           "&Port",IDC_STATIC,86,20,14,8
+    COMBOBOX        IDC_CB_PORT,137,16,82,95,CBS_DROPDOWNLIST | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "B&aud",IDC_BAUD_STATIC,86,40,45,8
+    COMBOBOX        IDC_CB_BAUD,137,36,82,85,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use &Cache",IDC_CACHE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,137,62,82,9
+    DEFPUSHBUTTON   "OK",IDOK,97,80,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,169,80,50,14
+END
+
+IDD_EPS_INSERT DIALOGEX 0, 0, 561, 86
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_BR_INTERNAL_PA,16,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BR_EXTERNAL_PA,68,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BR_TX_PA_ATTN,114,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PA_CTRL_BITS,161,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_INTERNAL_PA,210,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_EXTERNAL_PA,260,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_CLASS,308,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_TX_PA_ATTN,358,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_TX_PRE,407,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTPUT_DBM,455,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_NO_BR,504,43,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,224,65,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,287,65,50,14
+    LTEXT           "Internal PA",IDC_STATIC,16,31,36,12
+    LTEXT           "External PA",IDC_STATIC,68,31,38,12
+    LTEXT           "PA Ctrl Bits",IDC_STATIC,161,31,35,8
+    LTEXT           "Internal PA",IDC_STATIC,210,31,36,8
+    LTEXT           "External PA",IDC_STATIC,260,31,38,8
+    LTEXT           "Class",IDC_STATIC,308,31,18,8
+    LTEXT           "tx pa attn",IDC_STATIC,358,31,30,8
+    LTEXT           "tx Pre",IDC_STATIC,407,31,19,8
+    LTEXT           "dBm",IDC_STATIC,455,31,15,8
+    LTEXT           "Basic Rate",IDC_STATIC,16,19,36,8
+    LTEXT           "Basic Rate",IDC_STATIC,68,19,36,8
+    LTEXT           "EDR",IDC_STATIC,210,19,16,8
+    LTEXT           "EDR",IDC_STATIC,260,19,16,8
+    LTEXT           "EDR",IDC_STATIC,308,19,16,8
+    LTEXT           "EDR",IDC_STATIC,358,19,16,8
+    LTEXT           "EDR",IDC_STATIC,407,19,16,8
+    LTEXT           "Output",IDC_STATIC,455,19,22,8
+    LTEXT           "TX PA Attn",IDC_STATIC,114,31,38,12
+    LTEXT           "Basic Rate",IDC_STATIC,114,19,36,8
+    LTEXT           "No-BR",IDC_STATIC,504,31,22,8
+END
+
+IDD_POWER_TABLE_V0_INSERT DIALOGEX 0, 0, 596, 86
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_BR_INTERNAL_PA,16,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BR_MIX_LEVEL,68,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BR_MIX_OFFSET,120,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BR_TX_PA_ATTN,172,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_INTERNAL_PA,224,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_MIX_LEVEL,276,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_MIX_OFFSET,328,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_CLASS,380,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDR_TX_PA_ATTN,432,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTPUT_DBM,484,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NO_BR,538,43,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,237,65,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,308,65,50,14
+    LTEXT           "Internal PA",IDC_STATIC,15,31,36,10
+    LTEXT           "Tx Mix Level",IDC_STATIC,67,32,42,9
+    LTEXT           "Tx Mix Offset",IDC_STATIC,120,32,42,9
+    LTEXT           "TX PA Attn",IDC_STATIC,171,31,38,10
+    LTEXT           "Internal PA",IDC_STATIC,223,33,36,8
+    LTEXT           "TX Mix Level",IDC_STATIC,276,33,42,8
+    LTEXT           "TX Mix Offset",IDC_STATIC,328,33,44,8
+    LTEXT           "No-BR",IDC_STATIC,538,33,22,8
+    LTEXT           "Class",IDC_STATIC,380,33,18,8
+    LTEXT           "TX PA Attn",IDC_STATIC,432,33,36,8
+    LTEXT           "dBm",IDC_STATIC,484,33,15,8
+    LTEXT           "Basic Rate",IDC_STATIC,16,20,36,8
+    LTEXT           "Basic Rate",IDC_STATIC,69,20,36,8
+    LTEXT           "EDR",IDC_STATIC,223,21,16,8
+    LTEXT           "EDR",IDC_STATIC,276,21,16,8
+    LTEXT           "EDR",IDC_STATIC,380,21,16,8
+    LTEXT           "EDR",IDC_STATIC,432,21,16,8
+    LTEXT           "Output",IDC_STATIC,484,21,22,8
+    LTEXT           "Basic Rate",IDC_STATIC,172,20,36,8
+    LTEXT           "Basic Rate",IDC_STATIC,121,20,36,8
+    LTEXT           "EDR",IDC_STATIC,328,21,16,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CHOOSETRANS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        VERTGUIDE, 86
+        VERTGUIDE, 137
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+        HORZGUIDE, 28
+        HORZGUIDE, 48
+        HORZGUIDE, 62
+    END
+
+    IDD_EPS_INSERT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 554
+        VERTGUIDE, 16
+        VERTGUIDE, 68
+        VERTGUIDE, 114
+        VERTGUIDE, 161
+        VERTGUIDE, 210
+        VERTGUIDE, 260
+        VERTGUIDE, 308
+        VERTGUIDE, 358
+        VERTGUIDE, 407
+        VERTGUIDE, 455
+        VERTGUIDE, 504
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+        HORZGUIDE, 19
+        HORZGUIDE, 31
+        HORZGUIDE, 43
+    END
+
+    IDD_POWER_TABLE_V0_INSERT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 544
+        HORZGUIDE, 28
+        HORZGUIDE, 41
+        HORZGUIDE, 57
+        HORZGUIDE, 65
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PSTool.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\PSTool.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN_MENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Merge...",                   ID_FILE_MERGE
+        MENUITEM "Run &Query",                  ID_FILE_RUNQUERY
+        MENUITEM "&Dump",                       ID_FILE_DUMP
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "E&ntry"
+    BEGIN
+        MENUITEM "&Read Entry",                 IDC_READ
+        MENUITEM "&Set Entry",                  IDC_SET
+        MENUITEM SEPARATOR
+        MENUITEM "&Delete Entry",               IDC_BUT_DEL_KEY
+        MENUITEM SEPARATOR
+        MENUITEM "D&escribe",                   IDC_DESCRIBE
+        MENUITEM SEPARATOR
+        MENUITEM "&Edit Raw",                   ID_KEY_EDITRAW
+        MENUITEM SEPARATOR
+    END
+    POPUP "S&tores"
+    BEGIN
+        MENUITEM "&All (TIFR)",                 ID_STORES_ALL
+        MENUITEM "&Implementation Only (I)",    ID_STORES_IMPLEMENTATION
+        MENUITEM "R&OM Only (R)",               ID_STORES_ROMONLY
+        MENUITEM "RA&M Only (T)",               ID_STORES_RAMONLY
+        MENUITEM "&Factory Only (F)",           ID_STORES_FACTORYONLY
+        MENUITEM "&Not RAM (IFR)",              ID_STORES_NOTRAM
+    END
+    POPUP "B&ootmode"
+    BEGIN
+        MENUITEM "None",                        ID_BOOTMODE_NONE
+        MENUITEM SEPARATOR
+        MENUITEM "Bootmode 0",                  ID_BOOTMODE_0
+        MENUITEM "Bootmode 1",                  ID_BOOTMODE_1
+        MENUITEM "Bootmode 2",                  ID_BOOTMODE_2
+        MENUITEM "Bootmode 3",                  ID_BOOTMODE_3
+        MENUITEM "Bootmode 4",                  ID_BOOTMODE_4
+        MENUITEM "Bootmode 5",                  ID_BOOTMODE_5
+        MENUITEM "Bootmode 6",                  ID_BOOTMODE_6
+        MENUITEM "Bootmode 7",                  ID_BOOTMODE_7
+        MENUITEM SEPARATOR
+        MENUITEM "Delete Override",             ID_BOOTMODE_DELETE_KEY
+        MENUITEM SEPARATOR
+        MENUITEM "Show Only Overrides",         ID_BOOTMODE_SHOWONLYOVERRIDES
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "Sort by &Name",               ID_VIEW_SORTBYNAME
+        MENUITEM "Sort by &Ordinal",            ID_VIEW_SORTBYORDINAL
+        MENUITEM SEPARATOR
+        MENUITEM "&Friendly Names",             ID_VIEW_FRIENDLYNAMES
+        MENUITEM "&Programmer ID's",            ID_VIEW_PROGRAMMERIDS
+        MENUITEM SEPARATOR
+        MENUITEM "Show Only Set",               ID_VIEW_SHOWONLYSET
+    END
+    POPUP "Factor&y"
+    BEGIN
+        MENUITEM "Factory &Set",                ID_FACTORY_FACTORYSET
+        MENUITEM "Factory &Restore",            ID_FACTORY_FACTORYRESTORE
+        MENUITEM "Factory Restore &All",        ID_FACTORY_FACTORYRESTOREALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Firmware version",           ID_HELP_FIRMWARE
+        MENUITEM "&Describe Key",               IDC_DESCRIBE
+        MENUITEM SEPARATOR
+        MENUITEM "&About",                      ID_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_FACTORY_FACTORYSET   "Sets all written entries as the factory setting."
+    ID_FACTORY_FACTORYRESTORE 
+                            "Restores all entries to their factory setting, preserves entries that don't have a factory setting."
+    ID_FACTORY_FACTORYRESTOREALL 
+                            "Restores all entries to their factory setting, deletes entries that don't have a factory setting."
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\PSTool.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,736 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\DFUWizard.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDC_ICONDIALOGAPP       ICON    DISCARDABLE     "..\\..\\common\\CSR.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PAGE_CONNECTION DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Connection Type",IDC_PAGE_CONNECTION_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Please select how the BlueCore module is connected to your computer:",
+                    IDC_PAGE_CONNECTION_STATIC1,90,25,210,20,SS_NOPREFIX
+    CONTROL         "&Universal Serial Bus (USB)",
+                    IDC_PAGE_CONNECTION_RADIO_USB,"Button",
+                    BS_AUTORADIOBUTTON | BS_NOTIFY | WS_GROUP | WS_TABSTOP,
+                    115,50,99,10
+    CONTROL         "&COM port (RS-232)",IDC_PAGE_CONNECTION_RADIO_COM,
+                    "Button",BS_AUTORADIOBUTTON | BS_NOTIFY | WS_TABSTOP,115,
+                    65,76,10
+    CONTROL         "&Simulated connection (No hardware required)",
+                    IDC_PAGE_CONNECTION_RADIO_SIMULATED,"Button",
+                    BS_AUTORADIOBUTTON | BS_NOTIFY | NOT WS_VISIBLE | 
+                    WS_TABSTOP,115,80,158,10
+    LTEXT           "To continue, click Next.",IDC_PAGE_CONNECTION_STATIC2,
+                    90,100,210,10,SS_NOPREFIX
+    CONTROL         130,IDC_PAGE_CONNECTION_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE | WS_GROUP,0,0,81,182,WS_EX_STATICEDGE
+END
+
+IDD_PAGE_INTRO DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         130,IDC_PAGE_INTRO_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE,0,0,81,182,WS_EX_STATICEDGE
+    CONTROL         "Upgrade the Firmware of your BlueCore Module",
+                    IDC_PAGE_INTRO_TITLE,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Welcome to the Cambridge Silicon Radio BlueCore Device Firmware Upgrade Wizard. This Wizard will guide you through the steps necessary to upgrade the software of a BlueCore module.",
+                    IDC_PAGE_INTRO_STATIC1,90,25,210,30,SS_NOPREFIX
+    LTEXT           "The wizard needs information about how your BlueCore module is conected to the computer, and the name of the firmware upgrade file to use.",
+                    IDC_PAGE_INTRO_STATIC2,90,55,210,30,SS_NOPREFIX
+    LTEXT           "To begin the upgrade process, click Next.",
+                    IDC_PAGE_INTRO_STATIC3,90,85,210,15,SS_NOPREFIX
+    RTEXT           "Copyright message to be completed at run-time",
+                    IDC_PAGE_INTRO_COPYRIGHT_STATIC,85,145,210,15,
+                    SS_NOPREFIX | SS_CENTERIMAGE
+    RTEXT           "Version number to be completed at run-time",
+                    IDC_PAGE_INTRO_VERSION_STATIC,85,120,210,25,SS_NOPREFIX
+END
+
+IDD_PAGE_USB DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "USB Device Selection",IDC_PAGE_USB_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Please select the number of the USB BlueCore device to update.",
+                    IDC_PAGE_USB_STATIC1,90,25,210,10,SS_NOPREFIX
+    RTEXT           "&Device",IDC_PAGE_USB_USBNUM_STATIC,90,40,35,15,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_PAGE_USB_USBNUM_COMBO,130,40,155,115,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "USB device names are allocated dynamically by the computer. If multiple Bluetooth devices are connected to your computer then a particular device may not always be assigned the same name.",
+                    IDC_PAGE_USB_STATIC2,90,65,210,35,SS_NOPREFIX
+    CONTROL         130,IDC_PAGE_USB_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE,0,0,81,182,WS_EX_STATICEDGE
+    LTEXT           "Unless you are able to uniquely identify the device to be upgraded from its Bluetooth address, disconnect all other Bluetooth devices (leaving just one attached) and then try again.",
+                    IDC_PAGE_USB_STATIC3,90,100,210,30,SS_NOPREFIX
+END
+
+IDD_PAGE_COM DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "COM Port Selection",IDC_PAGE_COM_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Please select the COM port to which the BlueCore module is attached.",
+                    IDC_PAGE_COM_STATIC,90,25,210,20,SS_NOPREFIX
+    RTEXT           "&Port",IDC_PAGE_COM_COMPORT_STATIC,90,50,62,15,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_PAGE_COM_COMPORT_COMBO,155,50,60,95,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Automatically detect communications settings. (Recommended.)",
+                    IDC_PAGE_COM_COMAUTO_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,70,216,10
+    RTEXT           "Bau&d rate",IDC_PAGE_COM_BAUD_STATIC,90,90,62,15,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_PAGE_COM_BAUD_COMBO,155,90,60,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Protocol",IDC_PAGE_COM_PROTOCOL_STATIC,90,110,62,10,
+                    SS_NOPREFIX | SS_CENTERIMAGE
+    CONTROL         "BC&SP",IDC_PAGE_COM_BCSP_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,155,110,40,10
+    CONTROL         "&H4",IDC_PAGE_COM_H4_RADIO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,205,110,40,10
+    RTEXT           "Link establishment",IDC_PAGE_COM_LINK_STATIC,90,125,62,
+                    10,SS_NOPREFIX | SS_CENTERIMAGE
+    CONTROL         "D&isabled",IDC_PAGE_COM_DISABLED_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,155,125,43,10
+    CONTROL         "&Enabled",IDC_PAGE_COM_ENABLED_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,205,125,42,10
+    CONTROL         "Passi&ve",IDC_PAGE_COM_PASSIVE_RADIO,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,255,125,41,10
+    CONTROL         "&Tunnel via HCI extensions",IDC_PAGE_COM_TUNNEL_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,155,140,
+                    145,10
+    CONTROL         130,IDC_PAGE_COM_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE | WS_GROUP,0,0,81,182,WS_EX_STATICEDGE
+END
+
+IDD_PAGE_ACTION DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Upgrade Action",IDC_PAGE_ACTION_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Please select whether you wish to download a new version of firmware or restore a previous version:",
+                    IDC_PAGE_ACTION_STATIC,90,25,210,20,SS_NOPREFIX
+    CONTROL         "&Download a new version of the firmware, saving a copy of the current version first. Any previously saved version will be replaced. (Recommended.)",
+                    IDC_PAGE_ACTION_RADIO_UPLOAD_DOWNLOAD,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE | BS_NOTIFY | WS_GROUP | 
+                    WS_TABSTOP,115,50,185,25
+    CONTROL         "Download a new version of the firmware, &without first saving a copy of the current version.",
+                    IDC_PAGE_ACTION_RADIO_DOWNLOAD,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE | BS_NOTIFY | 
+                    WS_TABSTOP,115,80,185,20
+    CONTROL         "&Restore the previous version of the firmware. Use this option if a problem has been encountered after performing a previous upgrade.",
+                    IDC_PAGE_ACTION_RADIO_RESTORE,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE | BS_NOTIFY | 
+                    WS_TABSTOP,115,105,185,25
+    CONTROL         130,IDC_PAGE_ACTION_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE | WS_GROUP,0,0,81,182,WS_EX_STATICEDGE
+    EDITTEXT        IDC_PAGE_ACTION_COMMENT_EDIT,87,157,210,25,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | NOT 
+                    WS_BORDER | WS_VSCROLL | WS_GROUP | NOT WS_TABSTOP
+    PUSHBUTTON      "&Change",IDC_PAGE_ACTION_FILENAME_CHANGE_BUTTON,243,139,
+                    54,14
+    EDITTEXT        IDC_PAGE_ACTION_FILENAME_EDIT,126,142,114,12,
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER | WS_GROUP | 
+                    NOT WS_TABSTOP
+    LTEXT           "Backup File:",IDC_PAGE_ACTION_FNSTATIC,85,142,39,12
+END
+
+IDD_PAGE_USBENUM DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "USB Device Selection",IDC_PAGE_USBENUM_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Checking for connected USB devices.\n\nPlease wait...",
+                    IDC_PAGE_USBENUM_STATIC,90,25,210,25,SS_NOPREFIX
+    CONTROL         130,IDC_PAGE_USBENUM_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE,0,0,81,182,WS_EX_STATICEDGE
+    CONTROL         "Animate1",IDC_PAGE_USBENUM_ANIMATE,"SysAnimate32",
+                    ACS_CENTER | ACS_TRANSPARENT | WS_TABSTOP,90,60,210,80
+END
+
+IDD_PAGE_FILE DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Upgrade File",IDC_PAGE_FILE_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Please select the file containing the version of firmware to download:",
+                    IDC_PAGE_FILE_STATIC,90,25,210,20,SS_NOPREFIX
+    CONTROL         "Filename to be supplied at run-time",
+                    IDC_PAGE_FILE_NAME_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_NOPREFIX | SS_CENTERIMAGE | SS_SUNKEN,90,50,155,15
+    COMBOBOX        IDC_PAGE_FILE_NAME_COMBO,90,50,155,60,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | NOT WS_VISIBLE | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "B&rowse...",IDC_PAGE_FILE_BROWSE_BUTTON,250,50,50,14
+    CONTROL         130,IDC_PAGE_FILE_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE,0,0,81,182,WS_EX_STATICEDGE
+    EDITTEXT        IDC_PAGE_FILE_COMMENT_EDIT,90,70,210,90,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | NOT 
+                    WS_BORDER | WS_VSCROLL | WS_GROUP | NOT WS_TABSTOP
+END
+
+IDD_PAGE_PROGRESS DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Upgrade in Progress",IDC_PAGE_PROGRESS_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Please wait while the upgrade is completed...",
+                    IDC_PAGE_PROGRESS_STATIC,90,25,210,10,SS_NOPREFIX
+    CONTROL         "Upgrade procedure",IDC_PAGE_PROGRESS_MAIN_STATIC,"Static",
+                    SS_SIMPLE | SS_NOPREFIX | WS_GROUP,90,45,210,10
+    CONTROL         "Progress1",IDC_PAGE_PROGRESS_MAIN_PROGRESS,
+                    "msctls_progress32",WS_BORDER,90,55,210,10
+    CONTROL         "Current operation",IDC_PAGE_PROGRESS_SUB_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,75,210,10
+    CONTROL         "Progress1",IDC_PAGE_PROGRESS_SUB_PROGRESS,
+                    "msctls_progress32",WS_BORDER,90,85,210,10
+    CONTROL         "Animate1",IDC_PAGE_PROGRESS_ANIMATE,"SysAnimate32",
+                    ACS_CENTER | ACS_AUTOPLAY | WS_TABSTOP,0,0,81,182,
+                    WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "&Abort",IDC_PAGE_PROGRESS_ABORT_BUTTON,250,145,50,14,
+                    BS_NOTIFY
+    CONTROL         130,IDC_PAGE_PROGRESS_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE,0,0,81,182,WS_EX_STATICEDGE
+    LTEXT           "",IDC_PAGE_PROGRESS_COMMENT_STATIC,90,100,210,40,
+                    SS_NOPREFIX
+END
+
+IDD_PAGE_RESULTS DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Success",IDC_PAGE_RESULTS_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "The previous version of firmware is described as:",
+                    IDC_PAGE_RESULTS_COMMENT_STATIC,90,135,210,11,
+                    SS_NOPREFIX | NOT WS_VISIBLE
+    EDITTEXT        IDC_PAGE_RESULTS_COMMENT_EDIT,90,145,155,14,
+                    ES_AUTOHSCROLL | NOT WS_VISIBLE
+    PUSHBUTTON      "&Details...",IDC_PAGE_RESULTS_DETAILS_BUTTON,250,115,50,
+                    14,NOT WS_VISIBLE
+    DEFPUSHBUTTON   "&Change",IDC_PAGE_RESULTS_CHANGE_BUTTON,250,145,50,14,
+                    NOT WS_VISIBLE
+    CONTROL         "Animate1",IDC_PAGE_RESULTS_ANIMATE,"SysAnimate32",
+                    ACS_CENTER | ACS_AUTOPLAY | WS_TABSTOP,0,0,81,182,
+                    WS_EX_STATICEDGE
+    CONTROL         130,IDC_PAGE_RESULTS_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE,0,0,81,182,WS_EX_STATICEDGE
+    EDITTEXT        IDC_PAGE_RESULTS_EDIT,90,25,210,85,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | NOT 
+                    WS_BORDER | WS_VSCROLL | WS_GROUP | NOT WS_TABSTOP
+END
+
+IDD_PAGE_SUMMARY DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         130,IDC_PAGE_SUMMARY_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE,0,0,81,182,WS_EX_STATICEDGE
+    CONTROL         "Ready to Upgrade",IDC_PAGE_SUMMARY_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "The wizard has now collected all of the information that it requires to perform the upgrade. Please check the options listed below, and then click Next to start the upgrade, or Back to make changes.",
+                    IDC_PAGE_SUMMARY_STATIC1,90,25,210,30,SS_NOPREFIX
+    EDITTEXT        IDC_PAGE_SUMMARY_OPTIONS_EDIT,100,60,190,95,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_WANTRETURN | NOT WS_BORDER | WS_VSCROLL | WS_HSCROLL | 
+                    WS_GROUP | NOT WS_TABSTOP,WS_EX_STATICEDGE
+END
+
+IDD_PAGE_COMENUM DIALOGEX 0, 0, 304, 190
+STYLE WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "BlueCore Device Firmware Upgrade Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "COM Port Selection",IDC_PAGE_COMENUM_TITLE,"Static",
+                    SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,90,0,210,10
+    LTEXT           "Checking for available COM ports.\n\nPlease wait...",
+                    IDC_PAGE_COMENUM_STATIC,90,25,210,25,SS_NOPREFIX
+    CONTROL         130,IDC_PAGE_COMENUM_BITMAP,"Static",SS_BITMAP | 
+                    SS_CENTERIMAGE,0,0,81,182,WS_EX_STATICEDGE
+    CONTROL         "Animate1",IDC_PAGE_COMENUM_ANIMATE,"SysAnimate32",
+                    ACS_CENTER | ACS_TRANSPARENT | WS_TABSTOP,90,60,210,80
+END
+
+IDD_FILE_DIALOG DIALOG DISCARDABLE  0, 0, 247, 42
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_FILE_DIALOG_PREVIEW_EDIT,48,0,121,12,ES_CENTER | 
+                    ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PAGE_CONNECTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_INTRO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_USB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_COM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_ACTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_USBENUM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_RESULTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_SUMMARY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_PAGE_COMENUM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_FILE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 243
+        BOTTOMMARGIN, 38
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_WIZARD_PICTURE      BITMAP  DISCARDABLE     "res\\wizard.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PAGE_COM DLGINIT
+BEGIN
+    IDC_PAGE_COM_COMPORT_COMBO, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_PAGE_COM_COMPORT_COMBO, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_PAGE_COM_COMPORT_COMBO, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_PAGE_COM_COMPORT_COMBO, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_PAGE_COM_COMPORT_COMBO, 0x403, 5, 0
+0x4f43, 0x354d, "\000" 
+    IDC_PAGE_COM_COMPORT_COMBO, 0x403, 5, 0
+0x4f43, 0x364d, "\000" 
+    IDC_PAGE_COM_COMPORT_COMBO, 0x403, 5, 0
+0x4f43, 0x374d, "\000" 
+    IDC_PAGE_COM_COMPORT_COMBO, 0x403, 5, 0
+0x4f43, 0x384d, "\000" 
+    IDC_PAGE_COM_BAUD_COMBO, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_PAGE_COM_BAUD_COMBO, 0x403, 6, 0
+0x3931, 0x3032, 0x0030, 
+    IDC_PAGE_COM_BAUD_COMBO, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    IDC_PAGE_COM_BAUD_COMBO, 0x403, 6, 0
+0x3735, 0x3036, 0x0030, 
+    IDC_PAGE_COM_BAUD_COMBO, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    IDC_PAGE_COM_BAUD_COMBO, 0x403, 7, 0
+0x3332, 0x3430, 0x3030, "\000" 
+    IDC_PAGE_COM_BAUD_COMBO, 0x403, 7, 0
+0x3634, 0x3830, 0x3030, "\000" 
+    IDC_PAGE_COM_BAUD_COMBO, 0x403, 7, 0
+0x3239, 0x3631, 0x3030, "\000" 
+    0
+END
+
+IDD_PAGE_USB DLGINIT
+BEGIN
+    IDC_PAGE_USB_USBNUM_COMBO, 0x403, 14, 0
+0x5355, 0x2042, 0x6544, 0x6976, 0x6563, 0x2320, 0x0031, 
+    IDC_PAGE_USB_USBNUM_COMBO, 0x403, 14, 0
+0x5355, 0x2042, 0x6544, 0x6976, 0x6563, 0x2320, 0x0032, 
+    IDC_PAGE_USB_USBNUM_COMBO, 0x403, 14, 0
+0x5355, 0x2042, 0x6544, 0x6976, 0x6563, 0x2320, 0x0033, 
+    IDC_PAGE_USB_USBNUM_COMBO, 0x403, 14, 0
+0x5355, 0x2042, 0x6544, 0x6976, 0x6563, 0x2320, 0x0034, 
+    IDC_PAGE_USB_USBNUM_COMBO, 0x403, 14, 0
+0x5355, 0x2042, 0x6544, 0x6976, 0x6563, 0x2320, 0x0035, 
+    IDC_PAGE_USB_USBNUM_COMBO, 0x403, 14, 0
+0x5355, 0x2042, 0x6544, 0x6976, 0x6563, 0x2320, 0x0036, 
+    IDC_PAGE_USB_USBNUM_COMBO, 0x403, 14, 0
+0x5355, 0x2042, 0x6544, 0x6976, 0x6563, 0x2320, 0x0037, 
+    IDC_PAGE_USB_USBNUM_COMBO, 0x403, 14, 0
+0x5355, 0x2042, 0x6544, 0x6976, 0x6563, 0x2320, 0x0038, 
+    0
+END
+
+IDD_PAGE_FILE DLGINIT
+BEGIN
+    IDC_PAGE_FILE_NAME_COMBO, 0x403, 33, 0
+0x3a48, 0x625c, 0x3063, 0x5c31, 0x6564, 0x5c76, 0x7562, 0x6c69, 0x7364, 
+0x705c, 0x6f72, 0x5c67, 0x7270, 0x676f, 0x642e, 0x7566, "\000" 
+    IDC_PAGE_FILE_NAME_COMBO, 0x403, 38, 0
+0x3a48, 0x625c, 0x3063, 0x5c31, 0x6564, 0x5c76, 0x7562, 0x6c69, 0x7364, 
+0x705c, 0x6f72, 0x5f67, 0x6362, 0x3230, 0x705c, 0x6f72, 0x2e67, 0x6664, 
+0x0075, 
+    IDC_PAGE_FILE_NAME_COMBO, 0x403, 69, 0
+0x3a52, 0x685c, 0x6d6f, 0x5c65, 0x6362, 0x7773, 0x625c, 0x3063, 0x5f31, 
+0x6572, 0x5c6c, 0x7562, 0x6c69, 0x7364, 0x315c, 0x2e34, 0x5c33, 0x6362, 
+0x3130, 0x645c, 0x7665, 0x625c, 0x6975, 0x646c, 0x5c73, 0x7270, 0x676f, 
+0x625f, 0x3063, 0x5c32, 0x7270, 0x676f, 0x642e, 0x7566, "\000" 
+    IDC_PAGE_FILE_NAME_COMBO, 0x403, 7, 0
+0x6946, 0x656c, 0x3420, "\000" 
+    IDC_PAGE_FILE_NAME_COMBO, 0x403, 7, 0
+0x6946, 0x656c, 0x3520, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AVI
+//
+
+IDR_AVI_SEARCH          AVI     DISCARDABLE     "res\\Search.avi"
+IDR_AVI_UPLOAD          AVI     DISCARDABLE     "res\\Upload.avi"
+IDR_AVI_MANIFEST        AVI     DISCARDABLE     "res\\Manifest.avi"
+IDR_AVI_RECONFIGURE     AVI     DISCARDABLE     "res\\Reconfigure.avi"
+IDR_AVI_DOWNLOAD        AVI     DISCARDABLE     "res\\Download.avi"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "BlueCore Device Firmware Upgrade Wizard"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_EXIT_QUERY          "You have not finished upgrading the firmware of your BlueCore module.\nAre you sure you want to quit?"
+    IDP_EXIT_PROGRESS_QUERY "An upgrade is in progress; quitting the wizard now may leave your BlueCore module in a non-working state.\nAre you sure you want to quit?"
+    IDP_EXIT_PROGRESS_PROMPT 
+                            "The upgrade has been aborted. This may have left the BlueCore module in a non-operational state.\nRun this wizard again to complete the upgrade procedure."
+    IDP_ABORT_PROGRESS_QUERY 
+                            "Aborting the upgrade may leave your BlueCore module in a non-working state.\nAre you sure you want to abort?"
+    IDP_SKIP_UPLOAD_CORRUPT_QUERY 
+                            "The existing firmware of your BlueCore module is corrupt, so cannot be uploaded.\nWould you like to continue with the download anyway?"
+    IDP_SKIP_UPLOAD_UNSUPPORTED_QUERY 
+                            "Either the BlueCore module or the device driver does not support upload of the existing firmware.\nWould you like to continue with the download anyway?"
+    IDP_EXIT_COMMENT        "The comment in the uploaded DFU file has been modified but not saved.\nWould you like to keep the changes?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_REGISTRY_COMPANY    "Cambridge Silicon Radio"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_VERSION_FORMAT      "Version %s"
+    IDS_VERSION_BUILD_FORMAT "Version %s\n\r%s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SUMMARY_CONNECTION_USB "USB device:\n\t%s"
+    IDS_SUMMARY_CONNECTION_COM_AUTO "COM port:\n\t%s (auto-detect settings)"
+    IDS_SUMMARY_CONNECTION_COM_MANUAL "COM port:\n\t%s\n\t%s\n\t%s"
+    IDS_SUMMARY_CONNECTION_SIMULATED 
+                            "Simulated connection:\n\tNo hardware is required"
+    IDS_SUMMARY_PROTOCOL_BCSP "BCSP, %s"
+    IDS_SUMMARY_PROTOCOL_BCSP_TUNNEL "BCSP using HCI tunnelling, %s"
+    IDS_SUMMARY_PROTOCOL_H4 "H4 protocol"
+    IDS_SUMMARY_LINK_DISABLED "link establishment disabled"
+    IDS_SUMMARY_LINK_ENABLED "link establishment enabled"
+    IDS_SUMMARY_LINK_PASSIVE "passive link establishment"
+    IDS_SUMMARY_UPLOAD_DOWNLOAD 
+                            "Upload:\n\tExisting firmware will be saved\n\nDownload:\n\t%s"
+    IDS_SUMMARY_UPLOAD_DOWNLOAD_COMMENT 
+                            "Upload:\n\tExisting firmware will be saved\n\nDownload:\n\t%s\n\t%s"
+    IDS_SUMMARY_DOWNLOAD    "Upload:\n\tExisting firmware will NOT be saved\n\nDownload:\n\t%s"
+    IDS_SUMMARY_DOWNLOAD_COMMENT 
+                            "Upload:\n\tExisting firmware will NOT be saved\n\nDownload:\n\t%s\n\t%s"
+    IDS_SUMMARY_RESTORE     "Download:\n\tPrevious firmware will be restored"
+    IDS_SUMMARY_RESTORE_COMMENT 
+                            "Download:\n\tPrevious firmware will be restored\n\t%s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_ERROR_USB_NONE      "No USB BlueCore modules could be found connected to your computer; the devices may be in use by other software.\nCheck that the device that you wish to use is connected correctly, close any other applications that could be using it, and then try again."
+    IDP_ERROR_COM_NONE      "No suitable COM ports could be found on your computer; the ports may be in use by other software.\nClose any other applications that could be using the COM port that you wish to use and then try again."
+    IDP_ERROR_BAUD_NONE     "No suitable baud rates could be selected for the COM ports on your computer.\nPlease check the configuration of your computer and then try again."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROGRESS_OPERATION_RECONFIGURE 
+                            "Establishing communications and reconfiguring device"
+    IDS_PROGRESS_OPERATION_UPLOAD "Uploading existing firmware"
+    IDS_PROGRESS_OPERATION_DOWNLOAD "Downloading %s"
+    IDS_PROGRESS_OPERATION_MANIFEST "Restarting device with new firmware"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESULTS_TITLE_SUCCESS "Successful Upgrade"
+    IDS_RESULTS_TITLE_ABORT "Upgrade Aborted"
+    IDS_RESULTS_TITLE_FAIL  "Upgrade Failed"
+    IDS_RESULTS_MSG_SUCCESS_UPLOAD_DOWNLOAD 
+                            "The firmware of your BlueCore module was successfully upgraded using %s, and the new version appears to be operating correctly.\n\nIf you encounter problems using the BlueCore module then run this wizard again and select the option to restore the previous version of the firmware.\n\nTime taken:\n\tUpload\t\t%s\n\tDownload\t%s\n\tTotal\t\t%s"
+    IDS_RESULTS_MSG_SUCCESS_DOWNLOAD 
+                            "The firmware of your BlueCore module was successfully upgraded using %s, and the new version appears to be operating correctly.\n\nThe previous version of the firmware was not saved.\n\nTime taken:\n\tDownload\t%s\n\tTotal\t\t%s"
+    IDS_RESULTS_MSG_SUCCESS_RESTORE 
+                            "The firmware of your BlueCore module was successfully restored to its previous version, and it appears to be operating correctly.\n\nTime taken:\n\tRestore\t\t%s\n\tTotal\t\t%s"
+    IDS_RESULTS_MSG_ABORT   "The upgrade was aborted by the user."
+    IDS_RESULTS_MSG_FAIL_RECONFIGURE 
+                            "The upgrade operation was stopped while attempting to prepare the BlueCore module for the firmware upgrade. No upload or download of firmware has been performed; the existing firmware is unchanged. However, it may be necessary to reset the module before it can be used again normally."
+    IDS_RESULTS_MSG_FAIL_UPLOAD 
+                            "The upgrade operation was stopped while uploading the existing firmware from the BlueCore module. No changes have been made to any previously saved copy of firmware or to the firmware in the module. However, it may be necessary to reset the module before it can be used normally."
+    IDS_RESULTS_MSG_FAIL_DOWNLOAD 
+                            "The upgrade operation was stopped while downloading new firmware to the BlueCore module. This will probably have left the module's firmware in a corrupt state. It will be necessary to complete a download of the new firmware before the module can be used again normally."
+    IDS_RESULTS_MSG_FAIL_MANIFEST 
+                            "The upgrade operation was stopped while attempting to reconfigure the BlueCore module for normal operation after completing the download of the new firmware. It may be necessary to reset the module before it can be used normally."
+    IDS_RESULTS_MSG_FAIL_UNKNOWN 
+                            "Unable to determine the stage of the upgrade operation at which the upgrade was stopped. It may be necessary to reset the module before it can be used normally."
+    IDS_RESULTS_MSG_FAIL_INTERNAL 
+                            "The upgrade operation was stopped due to an internal software error."
+    IDS_RESULTS_MSG_RECOVER_ABORT 
+                            "Run the wizard again if you wish to complete the upgrade."
+    IDS_RESULTS_MSG_RECOVER_FAIL 
+                            "Resolve the cause of the failure, and then run this wizard again to complete the upgrade."
+    IDS_RESULTS_MSG_TIME    "%02d minutes %02d seconds"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FILE_BLANK          "A suitable file must be selected before the upgrade can be started."
+    IDS_FILE_INVALID        "The specified file is not suitable; either it is not a valid DFU file, or it cannot be read.\n\nEnsure that the file exists and that you have read permissions for it. If problems persist then the file may be corrupt."
+    IDS_FILE_COMMENT        "The DFU file is described as:\n%s\n\nTo continue, click Next."
+    IDS_FILE_NO_COMMENT     "To continue, click Next."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_FILE_NOT_DFU        "%s\nNot a valid DFU file.\nPlease select a file with a .dfu extension."
+    IDP_FILE_NOT_VALID      "%s\nNot a valid DFU file.\nEnsure that the file is readable and has not been corrupted."
+    IDS_FILE_SELECT_NONE_OPEN "Please select a DFU file"
+    IDS_FILE_SELECT_NONE_SAVE "Please enter a name for the DFU file"
+    IDS_FILE_SELECT_NO_COMMENT "No description available for %s"
+    IDS_FILE_CAPTION_OPEN   "Select DFU File"
+    IDS_FILE_CAPTION_SAVE   "Save DFU File As"
+    IDS_FILE_OK_OPEN        "Select"
+    IDS_FILE_OK_SAVE        "Save"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ACTION_INVALID      "No previously saved firmware could be found.\nSome upgrade options will remain disabled until a successful upload has been performed."
+    IDS_ACTION_COMMENT      "The previously saved firmware version is described as:\n%s"
+    IDS_ACTION_NO_COMMENT   " "
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\DFUWizard.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,26 @@
+File	: ipaq.csr
+	  Copyright (C) 2002 Cambridge Silicon Radio Limited
+
+Author	: D. Coultous
+
+Purpose	: Persistent store key settings to be included in DFU files for Compaq
+	  iPAQ devices.
+	  
+	  The PSKEY_USE_OLD_BCSP_LE persistent store key needs to be set for
+	  compatibility with the Widcomm stack used on iPAQ devices, which
+	  cannot cope with the new BCSP link establishment scheme.
+
+Modification history:
+
+	1.1	14:nov:02	doc	File created.
+	1.2	29:Nov:02	at	Added standard file header.
+
+$Id: //depot/bc/bluesuite_2_4/devHost/dfu/ipaq.psr#1 $
+
+
+// All iPAQ devices with this problem are fitted with BlueCore01
+&F002 = 0000 0000 0000 0001
+
+// PSKEY_USE_OLD_BCSP_LE
+&01B4 = 0001 // True
+

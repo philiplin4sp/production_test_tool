@@ -1,0 +1,15 @@
+:Base DFUWizard.hlp
+:Title BlueCore Device Firmware Upgrade Wizard
+1 Contents=HIDD_INDEX
+1 Stages of the wizard
+2 Upgrade the Firmware of your BlueCore Module=HIDD_PAGE_INTRO
+2 Connection Type=HIDD_PAGE_CONNECTION
+2 USB Device Selection=HIDD_PAGE_USB
+2 COM Port Selection=HIDD_PAGE_COM
+2 Upgrade Action=HIDD_PAGE_ACTION
+2 Upgrade File=HIDD_PAGE_FILE
+2 Ready to Upgrade=HIDD_PAGE_SUMMARY
+2 Upgrade in Progress=HIDD_PAGE_PROGRESS
+2 Results=HIDD_PAGE_RESULTS
+1 Command line interface
+2 Command line interface=HIDD_COMMAND_LINE

@@ -1,0 +1,54 @@
+[OPTIONS]
+Auto index=Yes
+Compatibility=1.1 or later
+Compiled file=DFUWizard.chm
+Contents file=DFUWizard.hhc
+Default topic=main_index.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=DFUWizard.hhk
+Language=0x0409 English (United States)
+Title=DFUWizard
+Error log file=
+Full text search stop list file=
+Binary TOC=No
+Binary Index=Yes
+Create CHI file=No
+Display compile notes=Yes
+Default window=
+Enhanced decompilation=No
+Flat=No
+
+[TEXT POPUPS]
+HTMLDefines.h
+
+[FILES]
+main_index.htm
+page_intro.htm
+page_connection.htm
+page_com.htm
+page_action.htm
+page_usbenum.htm
+page_file.htm
+page_progress.htm
+page_results.htm
+page_summary.htm
+cli.htm
+
+[ALIAS]
+HIDD_PAGE_CONNECTION=page_connection.htm
+HIDD_PAGE_INTRO=page_intro.htm
+HIDD_PAGE_COM=page_com.htm
+HIDD_PAGE_ACTION=page_action.htm
+HIDD_PAGE_USBENUM=page_usbenum.htm
+HIDD_PAGE_FILE=page_file.htm
+HIDD_PAGE_PROGRESS=page_progress.htm
+HIDD_PAGE_RESULTS=page_results.htm
+HIDD_PAGE_SUMMARY=page_summary.htm
+main_index=main_index.htm
+
+[MAP]
+#include HTMLDefines.h
+
+[MERGE FILES]
+BlueSuite.chm

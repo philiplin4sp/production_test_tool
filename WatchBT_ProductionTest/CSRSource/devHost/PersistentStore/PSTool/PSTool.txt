@@ -1,0 +1,86 @@
+
+
+	Release notes for the PS Tool
+        Copyright (C) 2002-2008 Cambridge Silicon Radio Ltd.
+
+
+Installation.
+=============
+
+Use the install executable to install the whole of BlueSuite.  You may need 
+to reboot your computer after the install has completed.  You need 
+administator rights to install the software on NT, since a device driver 
+for SPI is loaded.
+
+  Manual Installation.
+  ====================
+
+	Windows NT / WIndows 2000.
+
+	  1.	Copy the files to the destination directory : PSTool.exe, 
+	  pshelp.dll, psspi.dll, psbccmd.dll, pshelp.dll, spi.dll.
+
+	  2.	Run InstParSpi.bat.  You need administrative rights to do this, 
+		since the installation process accesses the System area of the 
+		registry.  If you don't have administrative rights, please contact 
+		your system administrator.
+
+	  3.	Run RegPsToolOcx.bat.  This will install a control used by the 
+		user interface.
+
+
+	Win98 / Windows ME
+
+	  1.	Copy the files to the destination directory : PSTool.exe, 
+	  pshelp.dll, psspi.dll, spi.dll.
+
+	  2.	Copy spivxd.vxd to the destination directory 
+
+	  3.	Run RegPsToolOcx.bat.  This will install a control used by the 
+		user interface.
+
+
+Common issues
+=============
+
+Changing the interface to H4
+
+  1.  Change the "Host Interface" to H4
+  2.  CHange the "UART Bitfields" to 168
+ (3). Change the "USB d+ PIO Line" to 0
+
+
+Changing the interface to BCSP
+
+  1.  Change the "Host Interface" to BCSP
+  2.  CHange the "UART Bitfields" to 6
+ (3). Change the "USB d+ PIO Line" to 0
+
+
+Changing the interface to USB
+
+  1.  Change the "Host Interface" to USB
+  2.  Change the "USB d+ PIO Line" to 2
+
+
+
+Troubleshooting
+===============
+
+ - PSTool doesn't run at all (or briefly flickers on thes screen).  You 
+	need to run "regsvr32 MSFLXGRD.OCX" to register the OCX .
+
+ - Doesn't access the device.  This is usually because the device driver 
+	isn't installed.
+
+  o for Win9x copy the spivxd.vxd file into the directory you're running 
+	the program from, or to the windows/system32 directory.
+
+  o for WinNT run install.bat to copy and register the parspi.sys device 
+	driver.  You need Administrative Rights to install the device 
+	driver on an NT system.
+
+ - Check your SPI cable is correctly connected, and make sure the stack 
+	is running before you set the keys.  (Use the "Reset BC" and 
+	"Reconnect" buttons.)
+
