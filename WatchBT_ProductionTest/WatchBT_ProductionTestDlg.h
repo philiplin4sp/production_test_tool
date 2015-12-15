@@ -3,9 +3,10 @@
 
 #pragma once
 //show debug mode
-#define SHOW_DEBUG_MODE
+//#define SHOW_DEBUG_MODE
+#undef SHOW_DEBUG_MODE
 //debug mode without Endpoint
-#define DESIGN_MODE 
+//#define DESIGN_MODE 
 #undef DESIGN_MODE
 #ifdef DESIGN_MODE
 	#undef PERIPHERAL_CONNECTION 
@@ -14,13 +15,12 @@
 #else
 	#define PERIPHERAL_CONNECTION 
 	#define ENPOINT_FUNCTIONALITY 
-	#undef SHOW_DEBUG_MODE
 #endif
 
 #ifdef SHOW_DEBUG_MODE
-#define TEST_SW_VERSION "(V66)"
-#else
 #define TEST_SW_VERSION "(DB)" __TIME__
+#else
+#define TEST_SW_VERSION "(V67)"
 #endif 
 
 #define OLED_TEST //display check by setting every pixel on 

@@ -191,7 +191,7 @@ char *fftresultsStrings[16] =	{
 		"2k, 3k, Other", 
 		"1k, 2k, 3k, Other",
 };
-
+int g_BT_address_runout = 0;
 
 vector <long> assignedBluetoothAddrList;
 uint16 bAddress[BLUETOOTH_ADDRESS_LENGTH]; 
@@ -634,7 +634,10 @@ BOOL CWatchBT_ProductionTestDlg::OnInitDialog()
 	{	availBluetoothAddrStr.Format("AVAIL_BT_ADDR: 0x%04x%02x%06x", availBluetoothAddrNap, availBluetoothAddrUap, availBluetoothAddrLap);
 	}
 	else
-	{	availBluetoothAddrStr.Format("AVAIL_BT_ADDR: NONE");
+	{
+		AfxMessageBox("Talk to Manager, No More BlueToothAddress", MB_OK|MB_ICONQUESTION|MB_DEFBUTTON2);
+		availBluetoothAddrStr.Format("AVAIL_BT_ADDR: NONE");
+		exit(1);
 	}
 	GetDlgItem(IDC_STATIC_AVAIL_BT_ADDR)->SetWindowText(availBluetoothAddrStr); 
 
@@ -2173,8 +2176,7 @@ int VerifyDutHandle(uint32 handle)
 	return TE_OK;
 }
 
-int ReadPskey(uint16 size, uint16 psKey, uint16 *data)
-{
+int ReadPskey(uint16 size, uint16 psKey, uint16 *data){
 #ifndef DESIGN_MODE
 	int32	iSuccess;
 	int		n=0;
@@ -2184,34 +2186,25 @@ int ReadPskey(uint16 size, uint16 psKey, uint16 *data)
 		return 0;
 
 	n=0;
-	do 
-	{	
+	do{	
 		iSuccess = psRead(dutHandle, psKey, 0, size, data, &length_read);
 	}
 	while ((iSuccess != TE_OK) && ((n++)<5));
 
-	if (iSuccess == TE_OK)
+	if (iSuccess == TE_OK){
 		return 1;
-	
-	if (iSuccess != TE_OK)
-	{
+	}else{
+
 		iSuccess = bccmdSetColdReset(dutHandle, /*5000*/15000);
 		if (iSuccess != TE_OK)
 			return 0; 
-		
 		n=0;
-		do 
-		{	
+		do{	
 			iSuccess = psRead(dutHandle, psKey, 0, size, data, &length_read);
 		}
 		while ((iSuccess != TE_OK) && ((n++)<5));
-
-		if (iSuccess == TE_OK)
-			return 1;
-		else 
+		if (iSuccess != TE_OK)
 			return 0;
-	} else{
-		return 0;
 	}
 #endif 
 	return 1;
@@ -2923,13 +2916,8 @@ int enableEnterDFUModeAfterPowerOn()
 }
 
 
-int PRODUCT_Initialization()
-{
-#if 1 /* Seavia 20150810 , fix unreferenced local variable warning*/
+int PRODUCT_Initialization(){
 	uint16 psKey[2], psKeyForBootMode=1, psKeyForUsr33=1;
-#else
-	uint16 psKey[2], pskey_length_read, psKeyForBootMode=1, psKeyForUsr33=1;
-#endif
 	int n=0;
 	uint16  nap;
 	uint8   uap;
@@ -2938,19 +2926,16 @@ int PRODUCT_Initialization()
 
 	if(PeriphiralOpen(PERIPHIRAL_ID_GPIOBOARD, USB_CONNECTION)){
 		for (int i=0; i<5; i++){
-			/*if(!ChangeGPIOState(VBAT_IO_PIN_NUM, HIGH))
-			{
-				SetStatus("Fail To SET VBAT_IO_PIN_NUM to HIGH");
-				return 0;
-			}*/
 			if(!ChangeGPIOState(USB_ENABLE_PIN_NUM, HIGH))
 			{
 				SetStatus("Fail To SET USB_ENABLE_PIN_NUM to HIGH");
+				WriteMainLogFile("Fail To SET USB_ENABLE_PIN_NUM to HIGH");
 				return 0;
 			}
 			if(!ChangeGPIOState(VCHARGE_IO_PIN_NUM, HIGH))
 			{
 				SetStatus("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
+				WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
 				return 0;
 			}
 			
@@ -2968,6 +2953,7 @@ int PRODUCT_Initialization()
 				if (iSuccess != TE_OK) 
 				{	
 					SetStatus("ReadBtAddr: Fail");
+					WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
 					return 0;
 				}
 			
@@ -2976,6 +2962,7 @@ int PRODUCT_Initialization()
 					if (disableEnterDFUModeAfterPowerOn() != 1)
 					{
 						SetStatus("disableDFUModeAfterPowerOn: Fail");
+						WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
 						return 0;
 					}
 				}
@@ -2983,9 +2970,9 @@ int PRODUCT_Initialization()
 				if (automaticPairingModeDisable(USB_CONNECTION) != 1)
 				{
 					SetStatus("automaticPairingModeDisable: Fail");
+					WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
 					return 0;
 				}
-
 #if 1 /*Seavia 20150903, add Project information, store in PSKEY_USER34 */
 				uint16 prjInfo[2] = {0};
 				uint16 model = 0xFFFF;
@@ -2995,22 +2982,20 @@ int PRODUCT_Initialization()
 				if (ReadPskey(2, PSKEY_USER34, prjInfo) == 1){
 					model = prjInfo[0];
 					FirmwareVersion = prjInfo[1];
-
 					ModelFWInformation.Format("%sV%d", projectModelInfo[model], FirmwareVersion);
 					projectInformationStr.Format("PRJ_INFO: %s", ModelFWInformation);
-					WriteMainLogFile ("%s : ReadPsKey model:%d(%d) FW:%d", __FUNCTION__, model, selectedModel, FirmwareVersion);
-					WriteLogFile ("%s : ReadPsKey model:%d(%d) FW:%d", __FUNCTION__, model, selectedModel, FirmwareVersion);
+					WriteMainLogFile("%s: ReadPsKey(PSKEY_USER34) model:%d(%d) FW:%d", __FUNCTION__, model, selectedModel, FirmwareVersion);
 					if (selectedModel != model){
 						if (model == 0xFFFF){
-							WriteLogFile("%s: Before v2.23", __FUNCTION__);
+							WriteMainLogFile("%s: The Version Before v2.23", __FUNCTION__);
 						}else{
-							WriteLogFile("%s: Wrong Verison with selected item", __FUNCTION__);
+							WriteMainLogFile("%s: Wrong Verison with selected item", __FUNCTION__);
 							return 0;
 						}
 					}
 				}else{
+					WriteMainLogFile("%s: ReadPsKey(PSKEY_USER34) FAIL.", __FUNCTION__);
 					projectInformationStr.Format("PRJ_INFO: read pskey_user34 fail");
-					WriteLogFile ("%s: ReadPsKey(PSKEY_USER34) FAIL.", __FUNCTION__);
 				}
 #endif
 				uint32 currentSerialNumber = 0;
@@ -3019,13 +3004,13 @@ int PRODUCT_Initialization()
 						currentSerialNumber = psKey[0] << 16;
 						currentSerialNumber += psKey[1];
 				}else{
-					WriteLogFile("%s: ReadPsKey(PSKEY_USER40) FAIL", __FUNCTION__);
+					WriteMainLogFile("%s: ReadPsKey(PSKEY_USER40) FAIL", __FUNCTION__);
 				}
 				if (currentSerialNumber > 0){
 						serialNumber = currentSerialNumber;
 						_snprintf(serialNumberArray, sizeof(serialNumberArray)-1, "SN#: %04x %04x", ((serialNumber >> 16)&0xFFFF), serialNumber&0xFFFF);
 						updateSerialNumberTextBox = 1;
-						WriteLogFile("%s: Get New SN", __FUNCTION__);
+						WriteMainLogFile("%s: Get New SN", __FUNCTION__);
 				}else{
 					if(GetConfigurationValue(PRODUCT_IGNORE_SERIAL_NUMBER_CHECK_STR) != 1){
 						serialNumber = 0;
@@ -3148,8 +3133,7 @@ int PCBTEST_Initialization()
 			SetStatus("%s is wrong fw version", ModelFWInformation);
 			return 0;
 		}
-	}
-	else{
+	}else{
 		SetStatus("Read pskey_user34 fail");
 		WriteMainLogFile ("PCBTEST_Initialization : ReadPsKey(PSKEY_USER34) FAIL.");
 		//GetDlgItem(IDC_STATIC_PRJ_INFO)->SetWindowText(projectInformationStr);
@@ -5557,48 +5541,21 @@ int PRODUCT_TEST_FactoryEnable()
 
     memset(psKey,0x0,sizeof(psKey));
     memset(deviceCode,0x0,sizeof(deviceCode));
-    if (PeriphiralOpen(PERIPHIRAL_ID_DUT, USB_CONNECTION))
-    {
-		if(PCBTEST_spiPortLock())
-		{
-#if 1 /* John - WriteBlutoothAddress_And_SerialNumber()*/
-			if(WriteBlutoothAddress_And_SerialNumber()) {
-			
-#else
-			if(WriteBluetoothAddress())
-			{
-#endif
+    if (PeriphiralOpen(PERIPHIRAL_ID_DUT, USB_CONNECTION)){
+		if(PCBTEST_spiPortLock()){ 
+			if(WriteBlutoothAddress_And_SerialNumber()) {	
 				n=0;
-				do 
-				{
+				do{
 					iSuccess = psSize(dutHandle, PSKEY_USER15, 0 ,&lengthRetrieved);
-				} 
-				while ((iSuccess != TE_OK) && ((n++)<5)); 
+				}while ((iSuccess != TE_OK) && ((n++)<5)); 
 
-				if (iSuccess != TE_OK)
-				{
+				if (iSuccess != TE_OK){
 					SetStatus("psSize: Fail");
 					update_bool = false;
 					WriteLogFile("PRODUCT_TEST_FactoryEnable: psSize on PSKEY_USER15 Failed");
 					return 0;
 				}
-#if 0
-				n=0;
-				do 
-				{
-					iSuccess = /*psRead*/sppsRead(dutHandle, PSKEY_USER15, 0, sizeof(psKey), psKey, &lengthRetrieved);
-				}
-				while ((iSuccess != TE_OK) && ((n++)<5)); 
- 
-				if (iSuccess != TE_OK)
-				{
-					SetStatus("psRead: Fail");
-					WriteLogFile("PRODUCT_TEST_FactoryEnable: psRead on PSKEY_USER15 Failed");
-					return 0;
-				}
-#endif
-				for (i=0; i<sizeof(psKey)/sizeof(uint16); i++)
-				{	
+				for (i=0; i<sizeof(psKey)/sizeof(uint16); i++){	
 					psKey[i] = psKey15Value[i];
 				}
 
@@ -6852,9 +6809,10 @@ int WriteBluetoothAddress()
 						}
 						else
 						{	
+							iAnswer = AfxMessageBox("Talk to Manager, No More BlueToothAddress for next test1", MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON2);
 							currentavailBluetoothAddrStr.Format("AVAIL_BT_ADDR: NONE");
 							SetStatus("AVAIL_BT_ADDR: NONE");
-							return 0;
+							return 1;
 						}
 						//
 
@@ -6992,7 +6950,8 @@ int WriteBlutoothAddress_And_SerialNumber()
 							currentavailBluetoothAddrStr.Format("AVAIL_BT_ADDR: NONE");
 							update_bool = false;
 							SetStatus("AVAIL_BT_ADDR: NONE");
-							return 0;
+							g_BT_address_runout = 1;
+							return 1;
 						}
 						//
 
@@ -8379,7 +8338,7 @@ void CWatchBT_ProductionTestDlg::OnBnClickedStartProductTest()
 	//label_text_color = GREY;
 	//label_text_id = IDC_STATIC_PRODUCT_TEST_RESULT;
 	GetDlgItem(IDC_STATIC_PRODUCT_TEST_RESULT)->SetWindowText(" ");
-
+	WriteLogFile("beginning");
 	for (int i=0; i<NUM_OF_PRODUCT_TEST_ROUTINES-1; i++)
 	{
 		if (abort)
@@ -8630,6 +8589,11 @@ void CWatchBT_ProductionTestDlg::OnBnClickedStartProductTest()
 	if (IndividualLogFileHd.is_open())
 		IndividualLogFileHd.close();
 	GetDlgItem(IDC_BUTTON_StartProductTest)->EnableWindow(TRUE);
+	//I don't have choice
+	if (g_BT_address_runout){
+		AfxMessageBox("Talk to Manager, No More Bluetooth address", MB_OK|MB_ICONQUESTION|MB_DEFBUTTON2);
+		exit(1);
+	}
 }
 
 

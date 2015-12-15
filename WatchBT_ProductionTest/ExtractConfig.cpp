@@ -3,6 +3,15 @@ using System;
 #include "ExportFunction.h"
 #include "ExtractConfig.h"
 
+void DebugPrint(const char *str, ...){
+  char buf[2048];
+
+  va_list ptr;
+  va_start(ptr,str);
+  vsprintf(buf,str,ptr);
+  OutputDebugString(buf);
+
+}
 int MatchNameWithConfigFile(char* compare, string file_name){
 
 	string config_name, config_value;
