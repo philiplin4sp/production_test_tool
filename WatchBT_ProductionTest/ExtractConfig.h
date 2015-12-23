@@ -8,4 +8,5 @@ using namespace std;
 
 int MatchNameWithConfigFile(char*, string);
 void DebugPrint (const char *str, ...);
+void smooth_sleep(int sec);
 

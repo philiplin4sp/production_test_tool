@@ -202,6 +202,7 @@ bool update_bool = true;
 unsigned long testSelection = 0;
 uint32 serialNumber = 0, availSerialNumber = 0, startingAvailSerialNumber=0, endingAvailSerialNumber=0;
 unsigned long availBluetoothAddrLap=0x0;
+unsigned long currentBluetoothAddrLap=0x0;
 unsigned long availBluetoothAddrNap=0, availBluetoothAddrUap=0;
 unsigned long startingAvailBluetoothAddrLap=0, endingAvailBluetoothAddrLap=0;
 uint16 pairing_info_data[100], pairing_info_data_size=0;
@@ -372,7 +373,7 @@ int PeriphiralOpen(int perphiralList, int connection_type)
 #ifndef NO_GPIO_BOARD 
 		if(UsbGpioModuleInit() == 0)
 		{
-			SetStatus("Fail To Open GPIO");
+			SetStatus("Fail To Open GPIO 1");
 			return 0;
 		}
 #endif
@@ -1113,7 +1114,7 @@ uint16 range_1_thru_0x800_licenseKey[LICENSE_KEY_LENGTH] = {0x3465, 0x5679, 0x4B
 
 licenseKey_type licenseKeys[MAX_NUMBER_OF_LICENSE_KEYS]  = { {0x1, 0x800, 0x3465, 0x5679, 0x4B21, 0xBCB8, 0x0000}, };
 
-config_variable_type config_variables[NUM_OF_CONFIGURATIONS+1] = { {TEST_TYPE_STR, 0, 1, 0},
+config_variable_type config_variables[NUM_OF_CONFIGURATIONS] = { {TEST_TYPE_STR, 0, 1, 0},
 																 {CRYSTAL_TRIM_OFFSET_LIMIT_STR, 2, CRYSTAL_TRIM_OFFSET_LIMIT_MAX_RANGE, 0}, 
 																 {ATTENUATION_STR, PATH_LOSS, ATTENUATION_MAX_RANGE, 0},
 																 {DUT_OUTPUT_POWER_MIN_LIMIT_STR, DUT_POWER_MIN_LIMIT, /*0*/DUT_OUTPUT_POWER_MAX_LIMIT_RANGE, DUT_OUTPUT_POWER_MIN_LIMIT_RANGE},
@@ -1183,11 +1184,13 @@ config_variable_type config_variables[NUM_OF_CONFIGURATIONS+1] = { {TEST_TYPE_ST
 																 {DUT_RESET_USING_RELAYS_STR, 0, 1, 0},
 #if 0															 /* Seavia 20160512 add sn prefix*/
 																 {PRODUCT_SERIAL_NUM_PREFIX_STR, 0, 0, 0},
-#endif															 /* Seavia 20150612 end*/
+#endif															 /* Seavia 20150612 end*/														
 #if 1															 /* Seavia 20150811 add factory indicator*/
 																 {PRODUCT_FACTORY_INDICATOR_STR, 0, 0, 0},
+																 {RMA_MODE, 0, 1, 0},
 #endif															 /* Seavia 20150811 end*/
 																 {ADDRESS_LICENSEKEYINFORMATION_STR, 0, 0, 0},
+																 
 																}; 
 
 double GetConfigurationValue(string config_name)
@@ -2926,6 +2929,9 @@ int PRODUCT_Initialization(){
 
 	if(PeriphiralOpen(PERIPHIRAL_ID_GPIOBOARD, USB_CONNECTION)){
 		for (int i=0; i<5; i++){
+			if (i > 0){
+				WriteMainLogFile("PERIPHIRAL_ID_GPIOBOARD Retry(%i)", i);
+			}
 			if(!ChangeGPIOState(USB_ENABLE_PIN_NUM, HIGH))
 			{
 				SetStatus("Fail To SET USB_ENABLE_PIN_NUM to HIGH");
@@ -2935,13 +2941,12 @@ int PRODUCT_Initialization(){
 			if(!ChangeGPIOState(VCHARGE_IO_PIN_NUM, HIGH))
 			{
 				SetStatus("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
-				WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
+				WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH 1");
 				return 0;
 			}
 			
 			//vbat_state = HIGH;
-			Sleep(2000); //must wait for at least 2 seconds for the chip to start up after VBAT is turned on. */
-
+			smooth_sleep(2); //must wait for at least 2 seconds for the chip to start up after VBAT is turned on. */
 			if(PeriphiralOpen(PERIPHIRAL_ID_DUT, USB_CONNECTION)){
 				n=0;
 				do 
@@ -2949,20 +2954,23 @@ int PRODUCT_Initialization(){
 					iSuccess = psReadBdAddr(/*handle*/dutHandle, (uint32 *)&lap, (uint8 *)&uap, (uint16 *)&nap);
 				}
 				while ((iSuccess != TE_OK) && ((n++)<5));
-				
-				if (iSuccess != TE_OK) 
-				{	
-					SetStatus("ReadBtAddr: Fail");
-					WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
-					return 0;
-				}
 			
+				if (iSuccess != TE_OK){	
+					SetStatus("ReadBtAddr: Fail");
+					WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH 3");
+					return 0;
+				} else {
+					currentBluetoothAddrLap = lap;
+					sprintf(currentBluetoothAddressString, "%04x%02x%06x", nap, uap, lap);
+					WriteMainLogFile("Retry(%d): lap %x, uap %x, nap %x", n, (uint32)lap, (uint8)uap, (uint16)nap);
+				}
+				
 				if ((nap == DUT_NAP) && (uap == DUT_UAP) && (lap == 0x1))
 				{	
 					if (disableEnterDFUModeAfterPowerOn() != 1)
 					{
 						SetStatus("disableDFUModeAfterPowerOn: Fail");
-						WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
+						WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH 4");
 						return 0;
 					}
 				}
@@ -2970,7 +2978,7 @@ int PRODUCT_Initialization(){
 				if (automaticPairingModeDisable(USB_CONNECTION) != 1)
 				{
 					SetStatus("automaticPairingModeDisable: Fail");
-					WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
+					WriteMainLogFile("Fail To SET VCHARGE_IO_PIN_NUM to HIGH 5");
 					return 0;
 				}
 #if 1 /*Seavia 20150903, add Project information, store in PSKEY_USER34 */
@@ -3009,7 +3017,7 @@ int PRODUCT_Initialization(){
 				if (currentSerialNumber > 0){
 						serialNumber = currentSerialNumber;
 						_snprintf(serialNumberArray, sizeof(serialNumberArray)-1, "SN#: %04x %04x", ((serialNumber >> 16)&0xFFFF), serialNumber&0xFFFF);
-						updateSerialNumberTextBox = 1;
+						//updateSerialNumberTextBox = 1;
 						WriteMainLogFile("%s: Get New SN", __FUNCTION__);
 				}else{
 					if(GetConfigurationValue(PRODUCT_IGNORE_SERIAL_NUMBER_CHECK_STR) != 1){
@@ -3045,7 +3053,7 @@ int PRODUCT_Initialization(){
 			
 		}
 	}
-	SetStatus("Fail To Open GPIO Board"); //modified for VC2
+	SetStatus("Fail To Open GPIO Board 2"); //modified for VC2
 	return 0;
 }
 
@@ -3089,7 +3097,7 @@ int PCBTEST_Initialization()
 	}
 	else
 	{
-		SetStatus("Fail To Open GPIO");
+		SetStatus("Fail To Open GPIO 3");
 		return 0;
 	}
 	
@@ -3261,7 +3269,7 @@ int PCBTEST_MeasurePowerSupply()
 	}
 	else
 	{	
-		SetStatus("Fail To Open GPIO");
+		SetStatus("Fail To Open GPIO 4");
 	}
 	return 0;
 }
@@ -5380,8 +5388,8 @@ int PRODUCT_TEST_MeasurePeakCurrent()
 		returnVal = MeasurePeakCurrent();
 		if(!ChangeGPIOState(VCHARGE_IO_PIN_NUM, HIGH))
 		{
-			SetStatus("Fail To SET VCHARGE_IO_PIN_NUM to HIGH");
-			return 0;
+			SetStatus("Fail To SET VCHARGE_IO_PIN_NUM to HIGH 6");
+			return 0; 
 		}
 		CsrDevicesClose();
 		return returnVal;
@@ -5524,8 +5532,7 @@ bool readSerial(HANDLE DeviceHandle)
 	return TRUE;
 }
 
-int PRODUCT_TEST_FactoryEnable()
-{
+int PRODUCT_TEST_FactoryEnable(){
 #ifdef FACTORY_ENABLE
     //Put Back Enter Pairing mode on power On
     uint16 psKey[6];
@@ -6863,10 +6870,6 @@ int WriteBluetoothAddress()
 
 int WriteBlutoothAddress_And_SerialNumber()
 {
-#if 0 /* Seavia 20150810 , fix unreferenced local variable warning*/
-	int readBtAddrResult;
-	uint16	data[1], len;
-#endif
 	int32	iSuccess;
 	int		n=0;
 	uint16  nap;
@@ -6875,11 +6878,14 @@ int WriteBlutoothAddress_And_SerialNumber()
 	int success_flag=0, licenseKeysIndex, licenseKeysSegmentIndex;
 	uint16 newLicenseKeys[LICENSE_KEY_LENGTH];
 	int iAnswer;
-	
+	if (GetConfigurationValue(RMA_MODE)){
+		WriteLogFile("%s: Didn't Write BT & SN in RMA mode ", __FUNCTION__);
+		return 1;
+	}
 	//if (handle != dutHandle)
 		//return 0;
-	if (PeriphiralOpen(PERIPHIRAL_ID_DUT, USB_CONNECTION)) 
-	{
+	if (PeriphiralOpen(PERIPHIRAL_ID_DUT, USB_CONNECTION)){
+
 		n=0;
 		do 
 		{
@@ -7003,8 +7009,12 @@ int WriteBlutoothAddress_And_SerialNumber()
 			update_bool = false;
 			WriteLogFile("WriteBluetoothAddress: psReadBdAddr on DUT failed");
 		}
+		return 0;
+	} else {
+		WriteLogFile("%s: PeriphiralOpen fail ", __FUNCTION__);
+		return 0;
 	}
-	return 0;
+	return 1;
 }
 
 #if 1 /* Seavia 20150810 import model name from config file : models.txt*/
@@ -7107,173 +7117,101 @@ int ResetSNPrefix(char *strptr)
 }
 #endif 
 
-int ReadConfigFile(char *file_name)
-{
+int ReadConfigFile(char *file_name){
 
 	string config_name, strInput;
 	float /*double*/ config_value;
 	CString strMessage, config_name_cstr;
 	int licenseKeyIndex=0;
-#if 0 /* Seavia 20150810 , fix unreferenced local variable warning*/
-	uint16 licenseKeySegment;
-#endif
 	int search_index=0, sscanf_result=0;
 	unsigned long startingBueToothAddrRange, endingBueToothAddrRange;
 	unsigned long temp_license_keys[LICENSE_KEY_LENGTH];
-	unsigned long tempTestSelection = 0; //not really been used
-
-#if 0 /* Seavia 20150612 serial number prefix string*/
-	// John: Globaling this, 
-	//Globling string sn_prefix_string; (because is used in Production Test as well)
-	snPrefixLen =0;
-	snPrefixLen_u16 =0;
-	memset(snPrefix, 0, sizeof(snPrefix));
-	memset(snPrefix_u16, 0, sizeof(snPrefix_u16));
-	memset(spSerialNumber, 0, sizeof(spSerialNumber));
-	memset(spSerialNumber_u16, 0, sizeof(spSerialNumber_u16));
-	WriteMainLogFile("ReadConfigFile: %s", /*CONFIG_FILE_NAME*/file_name); 
-#endif /* Seavia end*/
+	unsigned long tempTestSelection = 0;
 
 	ifstream ConfigFile (/*CONFIG_FILE_NAME*/file_name);
-	if (ConfigFile.fail())
-	{
+	if (ConfigFile.fail()){
 		WriteLogFile("ReadConfigFile: %s is not found.", /*CONFIG_FILE_NAME*/file_name); 
 		WriteMainLogFile("ReadConfigFile: %s is not found.", /*CONFIG_FILE_NAME*/file_name); 
 		return 0;
     }
 
-	if (ConfigFile.is_open())
-	{	
-		while ( !ConfigFile.eof())
-		{	
-
+	if (ConfigFile.is_open()){	
+		while ( !ConfigFile.eof()){	
 			config_name = " ";
 			ConfigFile >> config_name;
 			config_name_cstr = config_name.c_str();
 
-
-				search_index = 0;
-				while (search_index < (NUM_OF_CONFIGURATIONS + 1))
-				{
-					if (config_name_cstr.GetString() == config_variables[search_index].config_name)
-					{	
-						break;
-					}
-					search_index++;
+			search_index = 0;
+			while (search_index <= NUM_OF_CONFIGURATIONS){
+				if (config_name_cstr.GetString() == config_variables[search_index].config_name){	
+					break;
+				}
+				search_index++;
+			}
+			if (search_index > NUM_OF_CONFIGURATIONS){	
+				if (!ConfigFile.fail()){
+					WriteLogFile("ReadConfigFile:%s is corrupted. search_index = %d",file_name, search_index); 
+					WriteMainLogFile("ReadConfigFile:%s is corrupted. search_index = %d",file_name, search_index); 
+					return -1;
 				}
 
-				if (search_index >= (NUM_OF_CONFIGURATIONS + 1)) 
-				{	
-					if (!ConfigFile.fail())
-					{	WriteLogFile("ReadConfigFile:%s is corrupted. search_index = %d",file_name, search_index); 
-						WriteMainLogFile("ReadConfigFile:%s is corrupted. search_index = %d",file_name, search_index); 
-						return /*0*/-1;
-					}
-				}
-				else if (search_index == (NUM_OF_CONFIGURATIONS))
-				{
-					        ConfigFile >> hex >> startingBueToothAddrRange;
-					        ConfigFile >> hex >> endingBueToothAddrRange;
-						    ConfigFile >> hex >> temp_license_keys[0];
-							ConfigFile >> hex >> temp_license_keys[1];
-							ConfigFile >> hex >> temp_license_keys[2];
-							ConfigFile >> hex >> temp_license_keys[3];
-							ConfigFile >> hex >> temp_license_keys[4];
+			}else{
 
-						if (num_of_licenseKeys < MAX_NUMBER_OF_LICENSE_KEYS)
-						{
-							licenseKeys[num_of_licenseKeys].startingBluetoothAddr = startingBueToothAddrRange;
-							licenseKeys[num_of_licenseKeys].endingBluetoothAddr = endingBueToothAddrRange; 
-						}
-					
+				if(config_variables[search_index].config_name == TEST_TYPE_STR){
+					/*ConfigFile >> hex >> testSelection;
+					if(testSelection & 0x8000)
+					    config_value = 1;
+					else config_value = 0;*/
+					ConfigFile >> hex >> tempTestSelection;
+					if(tempTestSelection >= 0x8000)
+					    config_value = 1;
+					else config_value = 0;
+				}else if(config_variables[search_index].config_name == PRODUCT_FACTORY_INDICATOR_STR) {
+					ConfigFile >> factoryIndicator;
+					//WriteMainLogFile("ReadConfigFile: Factory Indicator : %c", factoryIndicator[0]); 
+					config_value = 0;
+				}else if (config_variables[search_index].config_name == ADDRESS_LICENSEKEYINFORMATION_STR){
 
-						for (int licenseKeySegmentIndex=0; licenseKeySegmentIndex<LICENSE_KEY_LENGTH; licenseKeySegmentIndex++)
-						{
-								licenseKeys[num_of_licenseKeys].licenseKey[licenseKeySegmentIndex] = (uint16)temp_license_keys[licenseKeySegmentIndex];
-						}
-						num_of_licenseKeys++;
-				}
-				else
-				{
+			        ConfigFile >> hex >> startingBueToothAddrRange;
+			        ConfigFile >> hex >> endingBueToothAddrRange;
+				    ConfigFile >> hex >> temp_license_keys[0];
+					ConfigFile >> hex >> temp_license_keys[1];
+					ConfigFile >> hex >> temp_license_keys[2];
+					ConfigFile >> hex >> temp_license_keys[3];
+					ConfigFile >> hex >> temp_license_keys[4];
 
-					if(search_index == 0)
+					if (num_of_licenseKeys < MAX_NUMBER_OF_LICENSE_KEYS)
 					{
-						/*ConfigFile >> hex >> testSelection;
-						if(testSelection & 0x8000)
-						    config_value = 1;
-						else config_value = 0;*/
-						ConfigFile >> hex >> tempTestSelection;
-						if(tempTestSelection >= 0x8000)
-						    config_value = 1;
-						else config_value = 0;
+						licenseKeys[num_of_licenseKeys].startingBluetoothAddr = startingBueToothAddrRange;
+						licenseKeys[num_of_licenseKeys].endingBluetoothAddr = endingBueToothAddrRange; 
 					}
-#if 0 // John 07302015: Getting Serial_Num_Prefix
-					else if(config_variables[search_index].config_name == PRODUCT_SERIAL_NUM_PREFIX_STR) {
-						const char *strptr;
-						char date_month[4];
+					for (int licenseKeySegmentIndex=0; licenseKeySegmentIndex<LICENSE_KEY_LENGTH; licenseKeySegmentIndex++){
+							licenseKeys[num_of_licenseKeys].licenseKey[licenseKeySegmentIndex] = (uint16)temp_license_keys[licenseKeySegmentIndex];
+					}
+					num_of_licenseKeys++;
 
-						ConfigFile >> sn_prefix_string;
+				}else{
+					ConfigFile >> config_value;
+				}
 
-						snPrefixLen = sn_prefix_string.length();
-						strptr = sn_prefix_string.c_str();
-						//Eddy append year(2 char)+month(1 char) to sn_prefix_string (string) -> snPrefixString (unit 16) 
-						// and snPrefix (uint)
+				if((config_variables[search_index].config_value_min_range <= config_value) 
+					&& (config_variables[search_index].config_value_max_range >= config_value)){  
 
-		                //Eddy, cover sn_prefix_string to snPrefixString, snprefix is 13 character snPrefixLen should be 7 ?
-						strcpy(snPrefix, strptr);
-						getDateMonth(date_month);
-						strcat(snPrefix, date_month);
-						snPrefixLen += 3;
-						// convert string to uint16 array snPrefix[]
-						// snPrefixLen= length of snPrefix[], add 0 for first 8 bit, if the prefix length is not a even number
-						convert2U16Arr(snPrefix_u16, snPrefix, snPrefixLen);
-						snPrefixLen_u16 = (snPrefixLen+1) / 2;
-						// John: ugly ugly code, fix Min/MAX value in PRODUCT_SERIAL_NUM_PREFIX_STR struct, since it's not a number value
-						config_value = 0;
-						WriteMainLogFile("ReadConfigFile: SN prefix : %s, snPrefixLen = %d", snPrefix, snPrefixLen); 
-					
-					}
-#endif
-#if 1 /*Seavia 20150810 get factory indicator from config file*/
-					else if(config_variables[search_index].config_name == PRODUCT_FACTORY_INDICATOR_STR) {
-						ConfigFile >> factoryIndicator;
-						//WriteMainLogFile("ReadConfigFile: Factory Indicator : %c", factoryIndicator[0]); 
-						config_value = 0;
-					}
-#endif
-					else
-					{
-						ConfigFile >> config_value;
-					}
-
-					if((config_variables[search_index].config_value_min_range <= config_value) 
-						&&
-					   (config_variables[search_index].config_value_max_range >= config_value)
-					  )
-					{  
-						config_variables[search_index].config_value = config_value;
-					}
-					else
-					{	
-						strMessage.Format(_T("ReadConfigFile:config_name %s 's value %f is out of range %f - %f"), 
-										config_name_cstr, config_value, config_variables[search_index].config_value_min_range, config_variables[search_index].config_value_max_range);
-						WriteLogFile(strMessage);
-						WriteMainLogFile(strMessage);
-					}
-				}		
-			/*(if (configurations_index > NUM_OF_CONFIGURATIONS)
-			{
-				return 1;
-			}*/
+					config_variables[search_index].config_value = config_value;
+				}else{	
+					strMessage.Format(_T("ReadConfigFile:config_name %s 's value %f is out of range %f - %f"), 
+									config_name_cstr, config_value, config_variables[search_index].config_value_min_range, config_variables[search_index].config_value_max_range);
+					WriteLogFile(strMessage);
+					WriteMainLogFile(strMessage);
+				}
+			}		
 		}
-		
-	}
-	else
-	{
+	}else{
 		WriteLogFile("ReadConfigFile:%s not been able to be opened.",file_name); 
 		WriteMainLogFile("ReadConfigFile:%s not been able to be opened.",file_name); 
 		return 0;
 	}
+
 	ConfigFile.close();
 	return 1;
 }
@@ -7597,24 +7535,27 @@ void WriteMainLogFile(const char * format, ...)
 int OpenLogFile()
 {	
 	char currentSerialNumberLogFilename[100], directory_name[100], IndividualLogFileName[100];
-#if 0 /*Seavia 20150910 fix warning : unreferenced local variable*/
-	int directory_name_int;
-#endif
 	CString directory_name_str;
 
 	if (serialNumber == 0)	
 		return 0;
 
-	/* John 8/21/2015: Initialize bAddress2 to be used by log files */
-	int success_flag = 0;
-	availBluetoothAddrLap = getAvailBluetoothAddr(success_flag);
-	if (success_flag && update_bool) {	
-		bAddress2[0] = (availBluetoothAddrLap >> 16)&0xFFFF;
-		bAddress2[1] = availBluetoothAddrLap&0xFFFF; 
+	if (GetConfigurationValue(RMA_MODE)){
+		bAddress2[0] = (currentBluetoothAddrLap >> 16) & 0xFFFF;
+		bAddress2[1] = currentBluetoothAddrLap & 0xFFFF; 
 		bAddress2[2] = DUT_UAP;
-		bAddress2[3] = DUT_NAP; 
-	} else {
-		update_bool = false;
+		bAddress2[3] = DUT_NAP;
+	}else{
+		int success_flag = 0;
+		availBluetoothAddrLap = getAvailBluetoothAddr(success_flag);
+		if (success_flag && update_bool) {	
+			bAddress2[0] = (availBluetoothAddrLap >> 16)&0xFFFF;
+			bAddress2[1] = availBluetoothAddrLap&0xFFFF; 
+			bAddress2[2] = DUT_UAP;
+			bAddress2[3] = DUT_NAP; 
+		} else {
+			update_bool = false;
+		}
 	}
 
 	/* John 8/27/2015: add bAddress2[0] and serial number to the log name*/
@@ -8313,19 +8254,15 @@ void CWatchBT_ProductionTestDlg::OnBnClickedStartProductTest()
 #endif
 	CString availBluetoothAddrStr, resultstring;
 	int abort = 0;
-
 	fwVer = "";
 	fwVersion[0] = 0;
 	fwVersion[1] = 0;
 	UpdateData(FALSE);
-
 	GetDlgItem(IDC_BUTTON_StartProductTest)->EnableWindow(FALSE);
-
 	Begin = Last = GetTickCount()/1000;
     memset(TestStatusString, 0, sizeof(TestStatusString));
 	MultimeterInitFlag = 0;
-	for (i=0; i<NUM_OF_PRODUCT_TEST_ROUTINES; i++)
-	{
+	for (i=0; i<NUM_OF_PRODUCT_TEST_ROUTINES; i++){
 		GetDlgItem(productTestResultsLabelsIDs[i])->SetWindowText("Not started"); 
 		GetDlgItem(productTestResultsDetailsLabelsIDs[i])->SetWindowText(" "); 
 		label_text_color = GREY;
@@ -8335,105 +8272,67 @@ void CWatchBT_ProductionTestDlg::OnBnClickedStartProductTest()
 #endif
 		product_tests_results[i] = NOT_STARTED;
 	}
-	//label_text_color = GREY;
-	//label_text_id = IDC_STATIC_PRODUCT_TEST_RESULT;
-	GetDlgItem(IDC_STATIC_PRODUCT_TEST_RESULT)->SetWindowText(" ");
-	WriteLogFile("beginning");
-	for (int i=0; i<NUM_OF_PRODUCT_TEST_ROUTINES-1; i++)
-	{
+	resultstring = "PRODUCT TEST RESULT "+TEST_SW_VERSION+" : Progress";
+	GetDlgItem(IDC_STATIC_PRODUCT_TEST_RESULT)->SetWindowText(resultstring);
+
+// Last Test should be excuate after other tests pass
+	for (int i=0; i < NUM_OF_PRODUCT_TEST_ROUTINES-1; i++){
 		if (abort)
 			break;
-		//CheckDlgButton
-		if (IsDlgButtonChecked(productTestCheckBoxesIDs[i]) || (i==0)) 
-		{
+
+		if (IsDlgButtonChecked(productTestCheckBoxesIDs[i]) || (i==0)){
 			SetStatus("");
-			if (product_tests[i] != NULL)
-			{	
+			GetDlgItem(IDC_STATIC_PRJ_INFO)->SetWindowText(projectInformationStr);
+			GetDlgItem(productTestResultsLabelsIDs[i])->SetWindowText("Progress"); 
 
-#if 1 /*Seavia 20150903 add project information */
-				GetDlgItem(IDC_STATIC_PRJ_INFO)->SetWindowText(projectInformationStr);
-#endif
-				GetDlgItem(productTestResultsLabelsIDs[i])->SetWindowText("Progress"); 
-				//InvalidateRect(NULL, false);
-				product_tests_results[i] = product_tests[i]();
-				if(i == NUM_OF_PRODUCT_TEST_ROUTINES - 2) {
-					update_bool = false;
-				}
-				WriteLogFile ("%s: result is %d", product_test_routines_names[i], product_tests_results[i]);  
-				if (product_tests_results[i] == 1)
-				{	
-					if(i == NUM_OF_PRODUCT_TEST_ROUTINES - 2) {
-						update_bool = false;
-					}
-					WriteMainLogFile("%s: SUCCESS", product_test_routines_names[i]);
-				}
-				else
-				{
-					if(i == NUM_OF_PRODUCT_TEST_ROUTINES - 2) {
-						update_bool = false;
-					}
-					WriteMainLogFile("%s: FAILURE", product_test_routines_names[i]);
-				}
-#ifdef display_time					
-				Now = GetTickCount()/1000;
-				TimeElasp = Now-Last; 
-				TotalTimeElasp = Now-Begin;
-				Last = Now;
-#endif		
-
-				label_text_id = productTestResultsLabelsIDs[i];
-				//GetDlgItem(productTestResultsLabelsIDs[i])->SendMessage(WM_CTLCOLORSTATIC );
-
-				if (product_tests_results[i] == SUCCESS)
-				{	
-					label_text_color = GREEN;
-					GetDlgItem(productTestResultsLabelsIDs[i])->SetWindowText("PASS"); 
-				}	
-				else 
-				{	
-					label_text_color = RED;
-					GetDlgItem(productTestResultsLabelsIDs[i])->SetWindowText("FAILURE"); 
-
-					if (GetConfigurationValue(STOP_AT_FIRST_FAIL_STR))
-					{
-						//break;
-						abort = 1;
-					}
-				}
-				//InvalidateRect(NULL, false);
+			if (product_tests[i] == NULL){	
+				break;
+			}
+			product_tests_results[i] = product_tests[i]();
+			label_text_id = productTestResultsLabelsIDs[i];
+			if (product_tests_results[i] == SUCCESS){	
+				label_text_color = GREEN;
+				GetDlgItem(productTestResultsLabelsIDs[i])->SetWindowText("PASS"); 
+			}else{	
+				label_text_color = RED;
+				GetDlgItem(productTestResultsLabelsIDs[i])->SetWindowText("FAILURE"); 
+			}
+			WriteLogFile ("%s: result is %d", product_test_routines_names[i], product_tests_results[i]);  	
 #ifdef update_color
-				GetDlgItem(productTestResultsLabelsIDs[i])->SendMessage(WM_CTLCOLORSTATIC );
+			GetDlgItem(productTestResultsLabelsIDs[i])->SendMessage(WM_CTLCOLORSTATIC );
 #endif
-
 #ifndef display_time
-				strMessage.Format("%s", TestStatusString);
+			strMessage.Format("%s", TestStatusString);
 #else
-				strMessage.Format("%d, %s", TotalTimeElasp, TestStatusString);
+			Now = GetTickCount()/1000;
+			TimeElasp = Now-Last; 
+			TotalTimeElasp = Now-Begin;
+			Last = Now;
+			strMessage.Format("%d, %s", TotalTimeElasp, TestStatusString);
 #endif
-				GetDlgItem(productTestResultsDetailsLabelsIDs[i])->SetWindowText(strMessage); 	
-				if(i == 0)
-				{
-					if(updateSerialNumberTextBox == 1)
-						GetDlgItem(IDC_STATIC_SERIAL_NUMBER)->SetWindowText(serialNumberArray);
-					updateSerialNumberTextBox = 0;
-					if (product_tests_results[i] != SUCCESS)
-					{
+			GetDlgItem(productTestResultsDetailsLabelsIDs[i])->SetWindowText(strMessage); 	
+			if(i == 0){
+
+				GetDlgItem(IDC_STATIC_SERIAL_NUMBER)->SetWindowText(serialNumberArray);
+				currentBluetoothAddrDisplayStr = "CURR_BT_ADDR: 0x";
+				currentBluetoothAddrDisplayStr += currentBluetoothAddressString;
+				GetDlgItem(IDC_STATIC_CURR_BT_ADDR)->SetWindowText(currentBluetoothAddrDisplayStr);
+				if (product_tests_results[i] != SUCCESS){
+					if (GetConfigurationValue(STOP_AT_FIRST_FAIL_STR)){
+						abort = 1;
+					}else{
 						break;
-
 					}
-
 				}
+
 			}
-			else
-			{	
-			}
-		}
-		else
-		{
+		}else{
+			WriteLogFile ("Didn't test %s", product_test_routines_names[i]);  
 		}
 	}
-
-
+//
+// Conclusion
+//
 	for (i=0; i<NUM_OF_PRODUCT_TEST_ROUTINES-1; i++)
 	{	
 		if (product_tests_results[i] == NOT_STARTED)  
@@ -8453,30 +8352,20 @@ void CWatchBT_ProductionTestDlg::OnBnClickedStartProductTest()
 		}
 	}
 
-//#ifndef EASY_FACTORY_ENABLE	
-	if ( (GetConfigurationValue(EASY_FACTORY_ENABLE_STR) == 1) || 
-		 (product_tests_overall_result == SUCCESS)
-	   )
-//#endif
-	{
-		if(IsDlgButtonChecked(productTestCheckBoxesIDs[NUM_OF_PRODUCT_TEST_ROUTINES-1]))
-		{
+	if ( (GetConfigurationValue(EASY_FACTORY_ENABLE_STR) == 1) || (product_tests_overall_result == SUCCESS)){
+		update_bool = false;
+		if(IsDlgButtonChecked(productTestCheckBoxesIDs[NUM_OF_PRODUCT_TEST_ROUTINES-1])){
 #ifndef test_mode
 			product_tests_results[NUM_OF_PRODUCT_TEST_ROUTINES-1] = product_tests[NUM_OF_PRODUCT_TEST_ROUTINES-1]();
 #else
-		//product_tests_results[NUM_OF_PRODUCT_TEST_ROUTINES-1] = 1;
+			//product_tests_results[NUM_OF_PRODUCT_TEST_ROUTINES-1] = 1;
 #endif
 			product_tests_overall_result = product_tests_results[NUM_OF_PRODUCT_TEST_ROUTINES-1];
 			label_text_id = productTestResultsLabelsIDs[NUM_OF_PRODUCT_TEST_ROUTINES-1];
-			//GetDlgItem(productTestResultsLabelsIDs[NUM_OF_PRODUCT_TEST_ROUTINES-1])->SendMessage(WM_CTLCOLORSTATIC );
-
-			if (product_tests_results[NUM_OF_PRODUCT_TEST_ROUTINES-1] == SUCCESS)
-			{	
+			if (product_tests_results[NUM_OF_PRODUCT_TEST_ROUTINES-1] == SUCCESS){	
 				label_text_color = GREEN;
 				GetDlgItem(productTestResultsLabelsIDs[NUM_OF_PRODUCT_TEST_ROUTINES-1])->SetWindowText("PASS"); 
-			}	
-			else 
-			{	
+			}else{	
 				label_text_color = RED;
 				GetDlgItem(productTestResultsLabelsIDs[NUM_OF_PRODUCT_TEST_ROUTINES-1])->SetWindowText("FAILURE"); 
 			}

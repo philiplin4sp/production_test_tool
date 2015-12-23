@@ -3,8 +3,8 @@
 
 #pragma once
 //show debug mode
-//#define SHOW_DEBUG_MODE
-#undef SHOW_DEBUG_MODE
+#define SHOW_DEBUG_MODE
+//#undef SHOW_DEBUG_MODE
 //debug mode without Endpoint
 //#define DESIGN_MODE 
 #undef DESIGN_MODE
@@ -227,6 +227,8 @@
 #define STOP_AT_FIRST_FAIL_STR										"STOP_AT_FIRST_FAIL"
 #define PRODUCT_RX_RETRY_STR										"PRODUCT_RX_RETRY"
 #define DUT_RESET_USING_RELAYS_STR									"DUT_RESET_USING_RELAYS"
+#define RMA_MODE													"RMA_MODE"
+
 
 #define DUT_POWER_MIN_LIMIT /*10.0*/ -40.0
 #define DUT_POWER_MAX_LIMIT /*10.0*/ 10.0
@@ -244,7 +246,7 @@
 #define DUT_BER_PERCENTAGE_MAX_LIMIT_RANGE /*1*/ 10.0
 
 #if 1 /*Seavia, add SN Configuration*/
-#define NUM_OF_CONFIGURATIONS 52
+#define NUM_OF_CONFIGURATIONS 54
 #else
 #define NUM_OF_CONFIGURATIONS 51
 #endif

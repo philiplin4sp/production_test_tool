@@ -1,8 +1,18 @@
 using System;
+using System.Threading;
+using System.Windows.Forms;
+
 #include "stdafx.h"
 #include "ExportFunction.h"
 #include "ExtractConfig.h"
 
+void smooth_sleep(int sec){
+	for (int i = 0; i < 1000 *sec; i++){
+		//this.Refresh();
+		//System.Threading.Thread.Sleep(100);
+		Sleep(1);
+	}
+}
 void DebugPrint(const char *str, ...){
   char buf[2048];
 
